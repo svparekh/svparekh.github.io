@@ -24,18 +24,21 @@
   <nav id="mini-nav-menu">
     <div class="logo">Setul Parekh</div>
     <div class="mini-nav-menu-container">
-      <div class="mini-nav-menu-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="mini-nav-menu-icon-container" onclick="toggleMenu()">
+        <!-- <input type="checkbox" onclick="toggleMenu()"> -->
+        <svg viewBox="0 0 32 32" class="mini-nav-menu-icon">
+          <path class="mini-nav-menu-icon-line mini-nav-menu-icon-line-style1" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+          <path class="mini-nav-menu-icon-line" d="M7 16 27 16"></path>
+        </svg>
       </div>
-        <ul class="mini-nav-menu-items">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </ul>
+      <ul class="mini-nav-menu-items">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </ul>
     </div>
+    
   </nav>
   <!-- profile section -->
   <section id="profile">
@@ -45,7 +48,7 @@
     <div class="section__text">
       <p class="section__text__p1">Hello, I'm</p>
       <h1 class="title">Setul Parekh</h1>
-      <!-- My career title -->
+      <!-- My career title and action buttons -->
       <p class="section__text__p2">Fullstack Developer</p>
       <div class="profile-btn-spacer">
         <div class="btn-container">
@@ -53,7 +56,9 @@
           <button class="btn btn-style2-1" onclick="location.href='./#contact'">Lets Work Together!</button>
         </div>
       </div>
+      <!-- Socials -->
       <div id="socials-container">
+        
         <img src="./assets/linkedin_logo.png" alt="LinkedIn Profile link" class="icon" onclick="location.href='https://www.linkedin.com/in/setul-parekh/'">
         <img src="./assets/github_logo.png" alt="GitHub Profile link" class="icon" onclick="location.href='https://github.com/svparekh'">
       </div>
@@ -182,35 +187,62 @@
       <div class="about-containers">
         <!-- Project 1 -->
         <div class="details-container color-container">
+          <!-- Thumbnail -->
           <div class="article-container">
             <img src="./assets/project-1.png" alt="Project 1 Thumbnail" class="project-img">
           </div>
+          
+          <!-- Tags -->
+          <div class="project-tags-container">
+            <span class="project-tag tag-style1">• Analytics</span>
+            <span class="project-tag tag-style2">• Dashboards</span>
+            <span class="project-tag tag-style3">• Dashboards</span>
+            <span class="project-tag">• Dashboards</span>
+            <span class="project-tag">• Dashboards</span>
+            <span class="project-tag">• Dashboards</span>
+            <span class="project-tag">• Dashboards</span><span class="project-tag">• Dashboards</span><span class="project-tag">• Dashboards</span><span class="project-tag">• Dashboards</span>
+          </div>
+          <!-- Title -->
           <h2 class="experience-subtitle project-title">Project 1</h2>
+          <!-- View button -->
           <div class="btn-container">
-            <button class="btn btn-style1-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
-            <button class="btn btn-style1-2 project-btn" onclick="location.href='https://github.com'">Live Demo</button>
+            <button class="btn btn-style1-1 project-btn" onclick="location.href='https://github.com'">View</button>
           </div>
         </div>
         <!-- Project 2 -->
         <div class="details-container color-container">
+          <!-- Thumbnail -->
           <div class="article-container">
             <img src="./assets/project-2.png" alt="Project 2 Thumbnail" class="project-img">
           </div>
+          <!-- Tags -->
+          <div class="project-tags-container">
+            <span style="background-color: rgba(165, 96, 247, 0.43); color: rgb(85, 27, 177);" class="project-tag">• Analytics</span>
+            <span class="project-tag">• Dashboards</span>
+          </div>
+          <!-- Title -->
           <h2 class="experience-subtitle project-title">Project 2</h2>
+          <!-- View button -->
           <div class="btn-container">
-            <button class="btn btn-style1-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
-            <button class="btn btn-style1-2 project-btn" onclick="location.href='https://github.com'">Live Demo</button>
+            <button class="btn btn-style1-1 project-btn" onclick="location.href='https://github.com'">View</button>
           </div>
         </div>
         <!-- Project 3 -->
         <div class="details-container color-container">
+          <!-- Thumbnail -->
           <div class="article-container">
             <img src="./assets/project-3.png" alt="Project 3 Thumbnail" class="project-img">
           </div>
+          <!-- Tags -->
+          <div class="project-tags-container">
+            <span style="background-color: rgba(165, 96, 247, 0.43); color: rgb(85, 27, 177);" class="project-tag">• Analytics</span>
+            <span class="project-tag">• Dashboards</span>
+          </div>
+          <!-- Title -->
           <h2 class="experience-subtitle project-title">Project 3</h2>
+          <!-- View button -->
           <div class="btn-container">
-            <button class="btn btn-style1-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
-            <button class="btn btn-style1-2 project-btn" onclick="location.href='https://github.com'">Live Demo</button>
+            <button class="btn btn-style1-1 project-btn" onclick="location.href='https://github.com'">View</button>
           </div>
         </div>
       </div>
