@@ -374,7 +374,6 @@ section {
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
     text-align: center;
-    
 }
 
 .section-container {
@@ -445,6 +444,17 @@ article .icon {
     letter-spacing: -0.6px;
 }
 
+.project-container {
+    /* gap: 2rem; */
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}
+
 .tag-style1 {
     background: #b2b2fd;
     color: #1a41cd;
@@ -468,6 +478,18 @@ article .icon {
     flex-wrap: wrap;
     place-content: flex-start;
     margin: 1.5rem;
+}
+
+.code-breakdown-bar {
+    width: 80%;
+    height: 8px;
+    display: flex;
+    outline: 1px solid #0000;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #b3b3b3;
+    color: white;
+    text-align: center;
 }
 
 .color-container {
