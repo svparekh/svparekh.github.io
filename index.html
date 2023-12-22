@@ -72,7 +72,7 @@
       <div class="section__pic-container">
         <img src="./assets/about_pic.png" alt="Profile Picture" class="about-pic">
       </div>
-      <div class="about-details-container">
+      <div class="about-details-container max-width-800">
         <div class="about-containers">
           <div class="details-container">
             <img src="./assets/experience.png" alt="Experience icon" class="icon">
@@ -97,7 +97,7 @@
     <p class="section__text__p1">Explore My</p>
     <h1 class="title">Experience</h1>
     <div class="experience-details-container">
-      <div class="about-containers">
+      <div class="about-containers max-width-1600">
         <!-- Backend Development -->
         <div class="details-container">
           <h2 class="experience-subtitle">Backend Development</h2>
@@ -115,6 +115,13 @@
               <div>
                 <h3>Git</h3>
                 <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
+              <div>
+                <h3>REST API</h3>
+                <p>Intermediate</p>
               </div>
             </article>
             <article>
@@ -173,6 +180,20 @@
                 <p>Intermediate</p>
               </div>
             </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
+              <div>
+                <h3>OpenGL</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
+              <div>
+                <h3>GLSL</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -184,67 +205,8 @@
     <p class="section__text__p1">Browse My Recent</p>
     <h1 class="title">Projects</h1>
     <div class="experience-details-container">
-      <div class="about-containers">
-        <!-- Project 1 -->
-        <div class="details-container color-container">
-          <!-- Thumbnail -->
-          <div class="article-container">
-            <img src="./assets/project-1.png" alt="Project 1 Thumbnail" class="project-img">
-          </div>
-          
-          <!-- Tags -->
-          <div class="project-tags-container">
-            <span class="project-tag tag-style1">• Analytics</span>
-            <span class="project-tag tag-style2">• Dashboards</span>
-            <span class="project-tag tag-style3">• Dashboards</span>
-            <span class="project-tag">• Dashboards</span>
-            <span class="project-tag">• Dashboards</span>
-            <span class="project-tag">• Dashboards</span>
-            <span class="project-tag">• Dashboards</span><span class="project-tag">• Dashboards</span><span class="project-tag">• Dashboards</span><span class="project-tag">• Dashboards</span>
-          </div>
-          <!-- Title -->
-          <h2 class="experience-subtitle project-title">Project 1</h2>
-          <!-- View button -->
-          <div class="btn-container">
-            <button class="btn btn-style1-1 project-btn" onclick="location.href='https://github.com'">View</button>
-          </div>
-        </div>
-        <!-- Project 2 -->
-        <div class="details-container color-container">
-          <!-- Thumbnail -->
-          <div class="article-container">
-            <img src="./assets/project-2.png" alt="Project 2 Thumbnail" class="project-img">
-          </div>
-          <!-- Tags -->
-          <div class="project-tags-container">
-            <span style="background-color: rgba(165, 96, 247, 0.43); color: rgb(85, 27, 177);" class="project-tag">• Analytics</span>
-            <span class="project-tag">• Dashboards</span>
-          </div>
-          <!-- Title -->
-          <h2 class="experience-subtitle project-title">Project 2</h2>
-          <!-- View button -->
-          <div class="btn-container">
-            <button class="btn btn-style1-1 project-btn" onclick="location.href='https://github.com'">View</button>
-          </div>
-        </div>
-        <!-- Project 3 -->
-        <div class="details-container color-container">
-          <!-- Thumbnail -->
-          <div class="article-container">
-            <img src="./assets/project-3.png" alt="Project 3 Thumbnail" class="project-img">
-          </div>
-          <!-- Tags -->
-          <div class="project-tags-container">
-            <span style="background-color: rgba(165, 96, 247, 0.43); color: rgb(85, 27, 177);" class="project-tag">• Analytics</span>
-            <span class="project-tag">• Dashboards</span>
-          </div>
-          <!-- Title -->
-          <h2 class="experience-subtitle project-title">Project 3</h2>
-          <!-- View button -->
-          <div class="btn-container">
-            <button class="btn btn-style1-1 project-btn" onclick="location.href='https://github.com'">View</button>
-          </div>
-        </div>
+      <div class="about-containers project-container">
+        <script src="gen_projects.js"></script>
       </div>
     </div>
     <img src="./assets/arrow.png" alt="Next section action icon" class="icon arrow" onclick="location.href='./#contact'">
