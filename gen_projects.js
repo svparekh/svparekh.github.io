@@ -37,7 +37,7 @@ class PLanguage extends PElement {
         return '<span style="\
         width: ' + this.percent + '%;\
         height: 100%;\
-        background-color: ' + this.color + ';\
+        background-color: ' + this.color + 'bb;\
         float: left;\
         "></span>';
     }
@@ -45,8 +45,8 @@ class PLanguage extends PElement {
     toHTMLText() {
         return '<li style="display: inline !important;">\
             <span style="align-items: center !important; display: inline-flex !important; font-size: 12px; ">\
-                <svg style="color: ' + this.color + '; display: inline-block; overflow: visible; vertical-align: text-bottom;\
-                    fill: ' + this.color + ';"\
+                <svg style="color: ' + this.color + 'bb; display: inline-block; overflow: visible; vertical-align: text-bottom;\
+                    fill: ' + this.color + 'bb;"\
                     aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-dot-fill mr-2">\
                     <path d="M8 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"></path>\
                 </svg>\
@@ -119,29 +119,29 @@ class Project extends PElement {
 };
 
 // Tags
-const t_aws = new PTag("AWS", "tag-style1");
+const t_aws = new PTag("AWS", "tag-style2");
 const t_rest_api = new PTag("REST API", "tag-style1");
 const t_cli = new PTag("CLI", "tag-style1");
-const t_opengl = new PTag("OpenGL", "tag-style1");
-const t_flutter = new PTag("Flutter", "tag-style1");
-const t_freeglut = new PTag("FreeGLUT", "tag-style1");
-const t_raymarching = new PTag("Ray Marching", "tag-style1");
-const t_sdf = new PTag("Signed Distance Fields", "tag-style1");
-const t_perlin = new PTag("Perlin Noise", "tag-style1");
-const t_phong = new PTag("Phong Shading", "tag-style1");
-const t_esp32 = new PTag("ESP32", "tag-style1");
-const t_espidf = new PTag("ESP IDF", "tag-style1");
+const t_opengl = new PTag("OpenGL", "tag-style2");
+const t_flutter = new PTag("Flutter", "tag-style2");
+const t_freeglut = new PTag("FreeGLUT", "tag-style2");
+const t_raymarching = new PTag("Ray Marching", "tag-style3");
+const t_sdf = new PTag("Signed Distance Fields", "tag-style3");
+const t_perlin = new PTag("Perlin Noise", "tag-style3");
+const t_phong = new PTag("Phong Shading", "tag-style3");
+const t_esp32 = new PTag("ESP32", "tag-style2");
+const t_espidf = new PTag("ESP IDF", "tag-style2");
 const t_pcb = new PTag("PCB", "tag-style1");
 const t_modular = new PTag("Software Modularization", "tag-style1");
-const t_firebase = new PTag("Firebase", "tag-style1");
-const t_firestore = new PTag("Firestore", "tag-style1");
-const t_gcpstorage = new PTag("GCP Cloud Storage", "tag-style1");
-const t_html = new PTag("HTML", "tag-style1");
-const t_css = new PTag("CSS", "tag-style1");
-const t_js = new PTag("JavaScript", "tag-style1");
-const t_python = new PTag("Python", "tag-style1");
-const t_pyqt = new PTag("PyQt", "tag-style1");
-const t_regex = new PTag("RegEx", "tag-style1");
+const t_firebase = new PTag("Firebase", "tag-style2");
+const t_firestore = new PTag("Firestore", "tag-style2");
+const t_gcpstorage = new PTag("GCP Cloud Storage", "tag-style2");
+const t_html = new PTag("HTML", "tag-style2");
+const t_css = new PTag("CSS", "tag-style2");
+const t_js = new PTag("JavaScript", "tag-style2");
+const t_python = new PTag("Python", "tag-style2");
+const t_pyqt = new PTag("PyQt", "tag-style2");
+const t_regex = new PTag("RegEx", "tag-style3");
 // Programming Languages 
 const l_rust = new PLanguage("Rust", "#dea584");
 const l_hmtl = new PLanguage("HTML", "#e34c26");
@@ -156,20 +156,20 @@ const l_dart = new PLanguage("Dart", "#00B4AB");
 const l_shell = new PLanguage("Shell", "#89e051");
 const l_cmake = new PLanguage("CMake", "#DA3434");
 const l_swift = new PLanguage("Swift", "#F05138");
-const l_other = new PLanguage("Other", "#ffffff"); 
+const l_other = new PLanguage("Other", "#b1b1b1"); 
 // Projects
 const projects = [
-    new Project("Internal Package Registry", "project-1.png", "https://github.com", 
+    new Project("Internal Package Registry", "project-1.png", "https://github.com/svparekh/Package-Registry-ECE461-Project-ACMEIR", 
         [t_aws, t_rest_api, t_cli], [[l_rust, 37.0], [l_dart, 32.7], [l_python, 26.6], [l_shell, 2.4], [l_other, 1.3]]),
-    new Project("Procedural Terrain", "project-2.png", "https://github.com", 
+    new Project("Procedural Terrain", "project-2.png", "https://github.com/svparekh/ProceduralPlanet", 
         [t_opengl, t_freeglut, t_raymarching, t_sdf, t_perlin, t_phong], [[l_cpp, 84.6], [l_c, 13.6], [l_glsl, 1.7], [l_other, 0.1]]),
-    new Project("Cloud-Enabled Fingerprint Scanner", "project-3.png", "https://github.com", 
-        [t_aws, t_rest_api, t_esp32, t_espidf, t_pcb, t_modular], [[l_c, 99.9], [l_other, 0.1]]),
-    new Project("Cloud-Enabled TaskApp", "project-4.png", "https://github.com", 
+    new Project("Cloud-Enabled Fingerprint Scanner", "project-3.png", "https://github.com/Senior-Design-ECE-477/ESP32", 
+        [t_aws, t_esp32, t_espidf, t_rest_api, t_pcb, t_modular], [[l_c, 99.9], [l_other, 0.1]]),
+    new Project("Cloud-Enabled TaskApp", "project-4.png", "https://github.com/svparekh/TaskApp", 
         [t_firebase, t_firestore, t_flutter, t_gcpstorage], [[l_dart, 80.0], [l_cpp, 9.8], [l_cmake, 8.0], [l_c, 0.6]]),
-    new Project("This Website", "project-5.png", "https://github.com", 
+    new Project("This Website", "project-5.png", "https://github.com/svparekh/svparekh.github.io", 
         [t_html, t_css, t_js], [[l_css, 41.2], [l_hmtl, 36.6], [l_js, 22.2]]),
-    new Project("Flutter Package: SMenus", "project-6.png", "https://github.com", 
+    new Project("Flutter Package: SMenus", "project-6.png", "https://github.com/svparekh/FlutterMenus", 
         [t_flutter], [[l_dart, 100.0]]),
     new Project("Client Quote Generator", "project-7.png", "https://github.com", 
         [l_python, t_pyqt, t_regex], [[l_python, 80.0], [l_cpp, 20.0]]),

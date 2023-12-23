@@ -10,6 +10,15 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #e8e8e8;
+    background-image: url('./assets/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* background: rgba(255, 255, 255, 0.2); */
+    border-radius: 16px;
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 html {
@@ -253,13 +262,19 @@ section {
   letter-spacing: 2.5px;
   font-weight: 500;
   color: #000;
-  background-color: #e8e8e8;
+  background-color: transparent; /* #e8e8e8 */
   border: rgb(53, 53, 53) 0.1rem solid;
   border-radius: 45px;
   box-shadow: none;
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
+
+  /* ------------------------------------------------------------------------------------------------------------------------------ */
+  /* border-radius: 16px; */
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .btn-style2-2 {
@@ -369,11 +384,17 @@ section {
 .details-container {
     padding: 1.5rem;
     flex: 1;
-    background: #e8e8e8;
+    background: transparent; /* #e8e8e8 */
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
     text-align: center;
+
+    /* ------------------------------------------------------------------------------------------------------------ */
+    /* border-radius: 16px; */
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .section-container {
@@ -458,17 +479,17 @@ article .icon {
 }
 
 .tag-style1 {
-    background: #b2b2fd;
+    background: rgba(178, 178, 253, 0.25);
     color: #1a41cd;
 }
 
 .tag-style2 {
-    background-color: rgba(165, 96, 247, 0.43);
+    background-color: rgba(165, 96, 247, 0.25);
     color: rgb(85, 27, 177);
 }
 
 .tag-style3 {
-    background: #bfe372;
+    background: rgba(191, 227, 114, 0.25);
     color: #4d7334;
 }
 
@@ -495,8 +516,8 @@ article .icon {
 }
 
 .color-container {
-    border: rgb(53, 53, 53) 0.1rem solid;
-    background: #e8e8e8;
+    border: rgba(53, 53, 53, 0.25) 0.15rem solid;
+    background: #e8e8e833; /* #e8e8e8 */
     -webkit-transition: all 150ms ease-in-out;
     transition: all 150ms ease-in-out;
 }
