@@ -96,13 +96,14 @@ class Project extends PElement {
             <img src="./assets/' + this.img + '" alt="' + this.name + ' Thumbnail" class="project-img">\
           </div>\
           <!-- Code Breakdown -->\
-          <ul style="margin-top: 1rem; padding-left: 0; margin-bottom: 0;">\
-            ' + code_legend + '\
-          </ul>\
-          <div style="justify-content: center; display:flex;">\
+          <div style="margin-top: 1rem; justify-content: center; display:flex;">\
             <span class="code-breakdown-bar">\
                 ' + code_html + '\
-            </span></div>\
+            </span>\
+          </div>\
+          <ul style="padding-left: 0; margin-bottom: 0.5rem; margin-top: 0.25rem; ">\
+            ' + code_legend + '\
+          </ul>\
           <!-- Tags -->\
           <div class="project-tags-container">\
           ' + tags_html + '\
@@ -164,13 +165,13 @@ const projects = [
         [t_opengl, t_freeglut, t_raymarching, t_sdf, t_perlin, t_phong], [[l_cpp, 84.6], [l_c, 13.6], [l_glsl, 1.7], [l_other, 0.1]]),
     new Project("Cloud-Enabled Fingerprint Scanner", "project-3.png", "https://github.com", 
         [t_aws, t_rest_api, t_esp32, t_espidf, t_pcb, t_modular], [[l_c, 99.9], [l_other, 0.1]]),
-    new Project("Cloud-Enabled TaskApp", "project-1.png", "https://github.com", 
+    new Project("Cloud-Enabled TaskApp", "project-4.png", "https://github.com", 
         [t_firebase, t_firestore, t_flutter, t_gcpstorage], [[l_dart, 80.0], [l_cpp, 9.8], [l_cmake, 8.0], [l_c, 0.6]]),
-    new Project("This Website", "project-2.png", "https://github.com", 
+    new Project("This Website", "project-5.png", "https://github.com", 
         [t_html, t_css, t_js], [[l_css, 41.2], [l_hmtl, 36.6], [l_js, 22.2]]),
-    new Project("Flutter Package: SMenus", "project-3.png", "https://github.com", 
+    new Project("Flutter Package: SMenus", "project-6.png", "https://github.com", 
         [t_flutter], [[l_dart, 100.0]]),
-    new Project("Client Quote Generator", "project-1.png", "https://github.com", 
+    new Project("Client Quote Generator", "project-7.png", "https://github.com", 
         [l_python, t_pyqt, t_regex], [[l_python, 80.0], [l_cpp, 20.0]]),
         
 ];

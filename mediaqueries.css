@@ -1,3 +1,17 @@
+@media screen and (max-width: 2000px) {
+    .project-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .project-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
 @media screen and (max-width: 1400px) {
     #profile {
         height: 83vh;
@@ -5,10 +19,6 @@
     }
     .about-containers {
         flex-wrap: wrap;
-    }
-    .project-container {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
     }
 }
 
@@ -42,9 +52,13 @@
     .about-containers {
         margin-top: 0;
     }
+    
+}
+
+@media screen and (max-width: 900px) {
     .project-container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(7, 1fr);
     }
 }
 
@@ -99,9 +113,5 @@
     }
     .profile-btn-spacer {
         padding: 0;
-    }
-    .project-container {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(7, 1fr);
     }
 }

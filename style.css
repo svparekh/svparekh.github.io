@@ -432,6 +432,8 @@ article .icon {
 
 #projects {
     position: relative;
+    min-height: 80vh;
+    height: auto;
 }
 
 .project-tag {
@@ -477,7 +479,7 @@ article .icon {
     display: flex;
     flex-wrap: wrap;
     place-content: flex-start;
-    margin: 1.5rem;
+    margin: 0 1.5rem;
 }
 
 .code-breakdown-bar {
