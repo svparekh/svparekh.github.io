@@ -269,12 +269,6 @@ section {
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-
-  /* ------------------------------------------------------------------------------------------------------------------------------ */
-  /* border-radius: 16px; */
-    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
 }
 
 .btn-style2-2 {
@@ -569,6 +563,7 @@ article .icon {
 .contact-info-upper-container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);

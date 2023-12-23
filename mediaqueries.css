@@ -114,4 +114,15 @@
     .profile-btn-spacer {
         padding: 0;
     }
+
+    .color-container:hover {
+        cursor: default;
+        -webkit-box-shadow: 0px 0px 0 #669c33, 0px 0px 0 #537d2c;
+        box-shadow: 0px 0px 0 #669c33, 0px 0px 0 #537d2c;
+        border: #88c043 0.25rem solid;
+        -webkit-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+        
+    }
 }
