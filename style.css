@@ -5,19 +5,26 @@
 * {
     --c-text-dark: black;
     --c-text-light: white;
-    --c-btn-outline: black;
-    --c-outline: ;
+    --c-btn-outline: rgb(153, 153, 153, 0.3);
     --c-offwhite: #f4f4f4;
     --c-bg: #e8e8e8;
     --c-bg-op: #e8e8e87f;    
-    /* --c-primary-light: #88c043;
+    --c-primary-light: #88c043;
     --c-primary: #669c33;
-    --c-primary-dark: #537d2c;  */
-    --c-primary: #b0caa7;
+    --c-primary-dark: #537d2c; 
+    /* --c-primary: #b0caa7;
     --c-primary-dark: #9aaf93;
-    --c-primary-light: #c2e1b8;
+    --c-primary-light: #c2e1b8; */
+    --b-outline: rgba(163, 163, 163, 0.3) 0.155rem solid;
     margin: 0;
     padding: 0;
+}
+
+::selection {
+    /* Change highlight background color to black */
+    background: var(--c-primary-light);
+    /* Change highlight text color to red */
+    color: #000;
 }
 
 body {
@@ -265,7 +272,7 @@ section {
     font-size: 15px;
     position: relative;
     overflow: hidden;
-    outline: 1px solid rgb(53, 53, 53);
+    outline: var(--b-outline);
 }
 
 .btn-style1-2 {}
@@ -278,7 +285,7 @@ section {
     font-weight: 500;
     color: var(--c-text-dark);
     background-color: var(--c-bg-op); /* var(--c-bg) */
-    border: rgb(53, 53, 53) 0.1rem solid;
+    border: var(--b-outline);
     border-radius: 45px;
     box-shadow: none;
     transition: all 0.3s ease 0s;
@@ -307,7 +314,7 @@ section {
     background-color: var(--c-primary); 
     box-shadow: 0px 15px 20px var(--c-primary-dark);
     color: var(--c-text-light);
-    border: var(--c-primary) 0.1rem solid;
+    border: var(--c-primary) 0.125rem solid;
     transform: translateY(-7px);
 
     text-decoration: none;
@@ -513,8 +520,7 @@ article .icon {
     flex: 1;
     background: #e8e8e877; /* var(--c-bg) */
     border-radius: 2rem;
-    border: rgba(163, 163, 163, 0.3) 0.125rem solid;
-    border-color: rgba(163, 163, 163, 0.3);
+    border: var(--b-outline);
     text-align: center;
 
     /* ------------------------------------------------------------------------------------------------------------ */
@@ -525,8 +531,8 @@ article .icon {
 }
 
 .color-container {
-    border: rgba(163, 163, 163, 0.3) 0.125rem solid;
-    background: #e8e8e877; /* var(--c-bg) */
+    border: var(--b-outline);
+    background: var(--c-bg-op); /* var(--c-bg) */
     -webkit-transition: all 150ms ease-in-out;
     transition: all 150ms ease-in-out;
 }
@@ -580,8 +586,7 @@ article .icon {
     justify-content: center;
     flex-direction: column;
     border-radius: 2rem;
-    border: rgb(53, 53, 53) 0.1rem solid;
-    border-color: rgb(163, 163, 163);
+    border: var(--b-outline);
     background: #e8e8e875;
     margin: 2rem auto;
     padding: 0.5rem;
