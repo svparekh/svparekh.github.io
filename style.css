@@ -1,4 +1,13 @@
 /* General stuff */
+/* Images:
+https://unblast.com/free-digital-devices-mockup-psd/
+Bing AI
+https://unsplash.com/photos/macbook-pro-on-top-of-brown-table-1SAnrIxw5OY
+https://www.pexels.com/photo/close-up-shot-of-a-mobile-phone-beside-a-keyboard-and-black-pencil-8490067/
+
+UI: uiverse.com
+
+*/
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
@@ -287,6 +296,7 @@ section {
     background-color: var(--c-bg-op); /* var(--c-bg) */
     border: var(--b-outline);
     border-radius: 45px;
+    -webkit-box-shadow: none;
     box-shadow: none;
     transition: all 0.3s ease 0s;
     cursor: pointer;
@@ -304,6 +314,7 @@ section {
     color: var(--c-text-light);
     transform: scale(1.1);
     outline: 2px solid var(--c-primary-light);
+    -webkit-box-shadow: 4px 5px 17px -4px var(--c-primary-dark);
     box-shadow: 4px 5px 17px -4px var(--c-primary-dark);
 }
 
@@ -312,6 +323,7 @@ section {
 .btn-style2-1:hover {
     /* var(--c-primary) */
     background-color: var(--c-primary); 
+    -webkit-box-shadow: 0px 15px 20px var(--c-primary-dark);
     box-shadow: 0px 15px 20px var(--c-primary-dark);
     color: var(--c-text-light);
     border: var(--c-primary) 0.125rem solid;
@@ -326,6 +338,7 @@ section {
     background-color: var(--c-primary-dark);
     -webkit-transition: all 0.25s;
     transition: all 0.25s;
+    -webkit-box-shadow: none;
     box-shadow: none;
     transform: scale(0.98);
 }
@@ -518,16 +531,17 @@ article .icon {
 .details-container {
     padding: 1.5rem;
     flex: 1;
-    background: #e8e8e877; /* var(--c-bg) */
+    background: var(--c-bg-op); /* var(--c-bg) */
     border-radius: 2rem;
     border: var(--b-outline);
     text-align: center;
 
     /* ------------------------------------------------------------------------------------------------------------ */
     /* Glass effect */
+    -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 
 .color-container {
@@ -592,6 +606,7 @@ article .icon {
     padding: 0.5rem;
 
     /* Glass effect */
+    -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);

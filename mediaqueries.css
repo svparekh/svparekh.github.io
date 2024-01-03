@@ -1,3 +1,12 @@
+/* 
+@media (min-width:320px)  { smartphones, iPhone, portrait 480x320 phones }
+@media (min-width:481px)  { portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. }
+@media (min-width:641px)  { portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones }
+@media (min-width:961px)  { tablet, landscape iPad, lo-res laptops ands desktops }
+@media (min-width:1025px) { big landscape tablets, laptops, and desktops }
+@media (min-width:1281px) { hi-res laptops and desktops } 
+*/
+
 @media screen and (max-width: 2000px) {
     .project-container {
         grid-template-columns: repeat(3, 1fr);
@@ -116,13 +125,14 @@
     }
 
     .color-container:hover {
+        /* for mobile devices, disable */
         cursor: default;
-        -webkit-box-shadow: 0px 0px 0 var(--c-primary), 0px 0px 0 var(--c-primary-dark);
-        box-shadow: 0px 0px 0 var(--c-primary), 0px 0px 0 var(--c-primary-dark);
-        border: var(--c-primary-light) 0.125rem solid;
+        -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border: var(--c-btn-outline) 0.125rem solid;
         -webkit-transform: translate(0px, 0px);
         -ms-transform: translate(0px, 0px);
         transform: translate(0px, 0px);
-        
     }
 }
+
