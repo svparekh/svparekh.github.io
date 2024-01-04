@@ -142,6 +142,14 @@ const t_js = new PTag("JavaScript", "tag-style2");
 const t_python = new PTag("Python", "tag-style2");
 const t_pyqt = new PTag("PyQt", "tag-style2");
 const t_regex = new PTag("RegEx", "tag-style3");
+const t_agile = new PTag("Agile", "tag-style1");
+const t_scrum = new PTag("Scrum", "tag-style1");
+const t_embedded = new PTag("Embedded Systems", "tag-style1");
+const t_spi = new PTag("SPI", "tag-style3");
+const t_uart = new PTag("UART", "tag-style3");
+const t_wifi = new PTag("Wifi", "tag-style3");
+const t_package = new PTag("Package", "tag-style1");
+
 // Programming Languages 
 const l_rust = new PLanguage("Rust", "#dea584");
 const l_hmtl = new PLanguage("HTML", "#e34c26");
@@ -156,23 +164,24 @@ const l_dart = new PLanguage("Dart", "#00B4AB");
 const l_shell = new PLanguage("Shell", "#89e051");
 const l_cmake = new PLanguage("CMake", "#DA3434");
 const l_swift = new PLanguage("Swift", "#F05138");
-const l_other = new PLanguage("Other", "#b1b1b1"); 
+const l_other = new PLanguage("Other", "#b1b1b1");
+
 // Projects
 const projects = [
     new Project("Internal Package Registry", "project-1.png", "https://github.com/svparekh/Package-Registry-ECE461-Project-ACMEIR", 
-        [t_aws, t_rest_api, t_cli], [[l_rust, 37.0], [l_dart, 32.7], [l_python, 26.6], [l_shell, 2.4], [l_other, 1.3]]),
+        [t_aws, t_agile, t_scrum, t_rest_api, t_cli], [[l_rust, 37.0], [l_dart, 32.7], [l_python, 26.6], [l_shell, 2.4], [l_other, 1.3]]),
     new Project("Procedural Terrain", "project-2.png", "https://github.com/svparekh/ProceduralPlanet", 
         [t_opengl, t_freeglut, t_raymarching, t_sdf, t_perlin, t_phong], [[l_cpp, 84.6], [l_c, 13.6], [l_glsl, 1.7], [l_other, 0.1]]),
     new Project("Cloud-Enabled Fingerprint Scanner", "project-3.png", "https://github.com/Senior-Design-ECE-477/ESP32", 
-        [t_aws, t_esp32, t_espidf, t_rest_api, t_pcb, t_modular], [[l_c, 99.9], [l_other, 0.1]]),
+        [t_aws, t_esp32, t_espidf, t_rest_api, t_pcb, t_modular, t_embedded, t_spi, t_uart, t_wifi], [[l_c, 99.9], [l_other, 0.1]]),
     new Project("Cloud-Enabled TaskApp", "project-4.png", "https://github.com/svparekh/TaskApp", 
         [t_firebase, t_firestore, t_flutter, t_gcpstorage], [[l_dart, 80.0], [l_cpp, 9.8], [l_cmake, 8.0], [l_c, 0.6]]),
     new Project("This Website", "project-5.png", "https://github.com/svparekh/svparekh.github.io", 
         [t_html, t_css, t_js], [[l_css, 41.2], [l_hmtl, 36.6], [l_js, 22.2]]),
     new Project("Flutter Package: SMenus", "project-6.png", "https://github.com/svparekh/FlutterMenus", 
-        [t_flutter], [[l_dart, 100.0]]),
+        [t_flutter, t_package], [[l_dart, 100.0]]),
     new Project("Client Quote Generator", "project-7.png", "https://github.com", 
-        [l_python, t_pyqt, t_regex], [[l_python, 80.0], [l_cpp, 20.0]]),
+        [t_python, t_pyqt, t_regex], [[l_python, 80.0], [l_cpp, 20.0]]),
         
 ];
 

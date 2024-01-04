@@ -27,7 +27,8 @@
       <div class="mini-nav-menu-icon-container" onclick="toggleMenu()">
         <!-- <input type="checkbox" onclick="toggleMenu()"> -->
         <svg viewBox="0 0 32 32" class="mini-nav-menu-icon">
-          <path class="mini-nav-menu-icon-line mini-nav-menu-icon-line-style1" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+          <path class="mini-nav-menu-icon-line mini-nav-menu-icon-line-style1" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 
+          30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
           <path class="mini-nav-menu-icon-line" d="M7 16 27 16"></path>
         </svg>
       </div>
@@ -86,8 +87,14 @@
             <p>B.Sc Computer Engineering</p>
           </div>
         </div>
+        <!-- description -->
         <div class="text-container">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dicta porro perspiciatis aut! Itaque sint excepturi repudiandae dolore perspiciatis rerum et dicta laborum aut ab reiciendis eum natus hic at voluptatum obcaecati velit ad quo incidunt exercitationem, ducimus voluptate tenetur! Illum quibusdam voluptas natus voluptatem hic laudantium eum, deleniti ut.</p>
+          <p>
+            Setul Parekh is a computer engineer with expertise in Python, C++, C, GLSL, and Dart. He is well-versed in backend development, embedded systems, database management, and 
+            cloud computing. Setul approaches every challenge with a growth mindset and is committed to staying at the forefront of industry trends. He believes in fostering a positive 
+            and inclusive work environment and effectively communicates technical concepts to non-technical stakeholders. Setul is committed to exploring emerging technologies and 
+            contributing to open-source projects. Let’s connect and explore opportunities to collaborate on exciting projects or discuss the latest advancements in the tech world!
+          </p>
         </div>
       </div>
     </div>
@@ -98,105 +105,8 @@
     <p class="section__text__p1">Explore My</p>
     <h1 class="title">Experience</h1>
     <div class="experience-details-container">
-      <div class="about-containers max-width-1600">
-        <!-- Backend Development -->
-        <div class="details-container">
-          <h2 class="experience-subtitle">Backend Development</h2>
-          <div class="article-container">
-            <!-- Skills -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
-              <div>
-                <h3>Python</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
-              <div>
-                <h3>Git</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
-              <div>
-                <h3>REST API</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
-              <div>
-                <h3>AWS</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
-              <div>
-                <h3>Firebase</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
-              <div>
-                <h3>MongoDB</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-          </div>
-        </div>
-        <!-- Frontend Development -->
-        <div class="details-container">
-          <h2 class="experience-subtitle">Frontend Development</h2>
-          <div class="article-container">
-            <!-- Skills -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
-              <div>
-                <h3>Flutter</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
-              <div>
-                <h3>HTML</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
-              <div>
-                <h3>CSS</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
-              <div>
-                <h3>JavaScript</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
-              <div>
-                <h3>OpenGL</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Skills Checkmark" class="icon">
-              <div>
-                <h3>GLSL</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-          </div>
-        </div>
+      <div class="about-containers max-width-1600" id="skills-container">
+        <script src="gen_skills.js"></script>
       </div>
     </div>
     <img src="./assets/arrow.png" alt="Next section action icon" class="icon arrow" onclick="location.href='./#projects'">
