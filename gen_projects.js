@@ -112,7 +112,7 @@ class Project extends PElement {
           <h2 class="experience-subtitle project-title">' + this.name + '</h2>\
           <!-- View button -->\
           <div class="btn-container">\
-            <button class="btn btn-style1-1 project-btn" onclick="location.href=\'' + this.url + '\'">View</button>\
+            <button class="btn btn-style1-1 project-btn" onclick="window.open(\'' + this.url + '\',\'_blank\')">View</button>\
           </div>\
         </div>';
     }
@@ -177,7 +177,7 @@ const projects = [
     new Project("Cloud-Enabled TaskApp", "project-4.png", "https://github.com/svparekh/TaskApp", 
         [t_firebase, t_firestore, t_flutter, t_gcpstorage], [[l_dart, 80.0], [l_cpp, 9.8], [l_cmake, 8.0], [l_c, 0.6]]),
     new Project("This Website", "project-5.png", "https://github.com/svparekh/svparekh.github.io", 
-        [t_html, t_css, t_js], [[l_css, 41.2], [l_hmtl, 36.6], [l_js, 22.2]]),
+        [t_html, t_css, t_js], [[l_css, 44.9], [l_js, 34.1], [l_hmtl, 21.0]]),
     new Project("Flutter Package: SMenus", "project-6.png", "https://github.com/svparekh/FlutterMenus", 
         [t_flutter, t_package], [[l_dart, 100.0]]),
     new Project("Client Quote Generator", "project-7.png", "https://github.com", 

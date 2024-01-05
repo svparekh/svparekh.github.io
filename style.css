@@ -1,5 +1,7 @@
 /* General stuff */
-/* Images:
+/* 
+Images:
+https://favicon.io/favicon-generator/
 https://unblast.com/free-digital-devices-mockup-psd/
 Bing AI
 https://unsplash.com/photos/macbook-pro-on-top-of-brown-table-1SAnrIxw5OY
@@ -9,6 +11,12 @@ UI: uiverse.com
 
 */
 /* Fonts */
+/* 
+- Font Title: Poppins
+- Font Author: Copyright 2020 The Poppins Project Authors (https://github.com/itfoundry/Poppins)
+- Font Source: http://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8V1tvFP-KUEg.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)) 
+*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 * {
@@ -373,6 +381,10 @@ section {
 
 #about {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 97vh;
+    height: auto;
 }
 
 .about-containers {
@@ -427,6 +439,10 @@ section {
 /* Experience Section */
 #experience {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 97vh;
+    height: auto;
 }
 
 .experience-subtitle {
@@ -466,7 +482,9 @@ article .icon {
 
 #projects {
     position: relative;
-    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 97vh;
     height: auto;
 }
 
@@ -592,7 +610,8 @@ article .icon {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 74vh;
+    min-height: 74vh;
+    height: auto;
 }
 
 .contact-info-upper-container {
