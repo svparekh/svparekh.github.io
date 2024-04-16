@@ -2,14 +2,14 @@
 class PElement {
     // Abstract class: https://medium.com/@rheedhar/abstract-classes-in-javascript-d6510afac958
     constructor(_name) {
-       if(this.constructor == PElement) {
-          throw new Error("Class is of abstract type and can't be instantiated");
-       };
- 
-       if(this.toHTML == undefined) {
-           throw new Error("toHTML method must be implemented");
-       };
-       this.name = _name;
+        if (this.constructor == PElement) {
+            throw new Error("Class is of abstract type and can't be instantiated");
+        };
+
+        if (this.toHTML == undefined) {
+            throw new Error("toHTML method must be implemented");
+        };
+        this.name = _name;
     }
 };
 
@@ -83,17 +83,17 @@ class Project extends PElement {
         }
         for (const language of this.languages) {
             var percent = 100.0 * language[1] / sum_bytes;
-            console.log(typeof(language[0]));
+            console.log(typeof (language[0]));
             var new_language = new PLanguage(language[0].name, language[0].color, percent);
             code_html += new_language.toHTML();
             code_legend += new_language.toHTMLText();
         }
         // Add project to container
         return '<!-- ' + this.name + ' -->\
-        <div class="details-container color-container">\
+        <div class="details-container translate-container">\
           <!-- Thumbnail -->\
           <div class="article-container">\
-            <img src="./assets/' + this.img + '" alt="' + this.name + ' Thumbnail" class="project-img">\
+            <img src="./assets/' + this.img + '" alt="' + this.name + ' Thumbnail" class="project-thumbnail">\
           </div>\
           <!-- Code Breakdown -->\
           <div style="margin-top: 1rem; justify-content: center; display:flex;">\
@@ -112,7 +112,7 @@ class Project extends PElement {
           <h2 class="experience-subtitle project-title">' + this.name + '</h2>\
           <!-- View button -->\
           <div class="btn-container">\
-            <button class="btn btn-style1-1 project-btn" onclick="window.open(\'' + this.url + '\',\'_blank\')">View</button>\
+            <button class="btn btn-style1 project-btn" onclick="window.open(\'' + this.url + '\',\'_blank\')">View</button>\
           </div>\
         </div>';
     }
@@ -159,30 +159,36 @@ const l_makefile = new PLanguage("Makefile", "#427819");
 const l_cpp = new PLanguage("C++", "#f34b7d");
 const l_c = new PLanguage("C", "#555555");
 const l_python = new PLanguage("Python", "#3572A5");
-const l_glsl = new PLanguage("GLSL", "#5686a5"); 
-const l_dart = new PLanguage("Dart", "#00B4AB");  
+const l_glsl = new PLanguage("GLSL", "#5686a5");
+const l_dart = new PLanguage("Dart", "#00B4AB");
 const l_shell = new PLanguage("Shell", "#89e051");
 const l_cmake = new PLanguage("CMake", "#DA3434");
 const l_swift = new PLanguage("Swift", "#F05138");
 const l_other = new PLanguage("Other", "#b1b1b1");
 
 // Projects
-const projects = [
-    new Project("Internal Package Registry", "project-1.png", "https://github.com/svparekh/Package-Registry-ECE461-Project-ACMEIR", 
+const all_projects = [
+    new Project("Internal Package Registry", "project-1.png", "https://github.com/svparekh/Package-Registry-ECE461-Project-ACMEIR",
         [t_aws, t_agile, t_scrum, t_rest_api, t_cli], [[l_rust, 37.0], [l_dart, 32.7], [l_python, 26.6], [l_shell, 2.4], [l_other, 1.3]]),
-    new Project("Procedural Terrain", "project-2.png", "https://github.com/svparekh/ProceduralPlanet", 
+    new Project("Procedural Terrain", "project-2.png", "https://github.com/svparekh/ProceduralPlanet",
         [t_opengl, t_freeglut, t_raymarching, t_sdf, t_perlin, t_phong], [[l_cpp, 84.6], [l_c, 13.6], [l_glsl, 1.7], [l_other, 0.1]]),
-    new Project("Cloud-Enabled Fingerprint Scanner", "project-3.png", "https://github.com/Senior-Design-ECE-477/ESP32", 
+    new Project("Cloud-Enabled Fingerprint Scanner", "project-3.png", "https://github.com/Senior-Design-ECE-477/ESP32",
         [t_aws, t_esp32, t_espidf, t_rest_api, t_pcb, t_modular, t_embedded, t_spi, t_uart, t_wifi], [[l_c, 99.9], [l_other, 0.1]]),
-    new Project("Cloud-Enabled TaskApp", "project-4.png", "https://github.com/svparekh/TaskApp", 
+    new Project("Cloud-Enabled TaskApp", "project-4.png", "https://github.com/svparekh/TaskApp",
         [t_firebase, t_firestore, t_flutter, t_gcpstorage], [[l_dart, 80.0], [l_cpp, 9.8], [l_cmake, 8.0], [l_c, 0.6]]),
-    new Project("This Website", "project-5.png", "https://github.com/svparekh/svparekh.github.io", 
+    new Project("This Website", "project-5.png", "https://github.com/svparekh/svparekh.github.io",
         [t_html, t_css, t_js], [[l_css, 44.9], [l_js, 34.1], [l_hmtl, 21.0]]),
-    new Project("Flutter Package: SMenus", "project-6.png", "https://github.com/svparekh/FlutterMenus", 
+    new Project("Flutter Package: SMenus", "project-6.png", "https://github.com/svparekh/FlutterMenus",
         [t_flutter, t_package], [[l_dart, 100.0]]),
-    new Project("Client Quote Generator", "project-7.png", "https://github.com", 
+    new Project("Client Quote Generator", "project-7.png", "https://github.com",
         [t_python, t_pyqt, t_regex], [[l_python, 80.0], [l_cpp, 20.0]]),
-        
+];
+
+const projects = [
+    all_projects[0],
+    all_projects[2],
+    all_projects[3],
+    all_projects[6]
 ];
 
 // Get container that holds each project

@@ -6,3 +6,18 @@ function toggleMenu() {
     icon.classList.toggle("open");
     menu_bg.classList.toggle("open");
 }
+
+// Classes
+class BaseElement {
+    // Abstract class: https://medium.com/@rheedhar/abstract-classes-in-javascript-d6510afac958
+    constructor(_name) {
+        if (this.constructor == BaseElement) {
+            throw new Error("Class is of abstract type and can't be instantiated");
+        };
+
+        if (this.toHTML == undefined) {
+            throw new Error("toHTML method must be implemented");
+        };
+        this.name = _name;
+    }
+};
