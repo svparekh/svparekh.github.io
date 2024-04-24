@@ -55,8 +55,9 @@ function addLinkToBottom() {
 }
 
 const jobs = [
-    new Job("Software Developer", "Progressive Insurance", "May 2023 to August 2023", "This was an internship", 'prog_logo.png'),
-    new Job("Computer Engineer", "Aurora Circuits", "May 2021 to August 2021", '', 'ac_logo.png')
+    new Job("IT Backend Apps Programmer Associate", "Progressive Insurance", "July 2024 to Present", '', 'prog_logo.png'),
+    new Job("Software Developer Intern", "Progressive Insurance", "May 2023 to August 2023", '', 'prog_logo.png'),
+    new Job("Computer Engineer Intern", "Aurora Circuits", "May 2021 to August 2021", '', 'ac_logo.png')
 
 ];
 
