@@ -21,7 +21,7 @@ class PTag extends PElement {
     }
 
     toHTML() {
-        return '<span class="project-tag ' + this.style + '">• ' + this.name + '</span>';
+        return '<span class="project-tag ' + this.style + '">' + this.name + '</span>';
     }
 };
 
@@ -150,6 +150,14 @@ const t_uart = new PTag("UART", "tag-style3");
 const t_wifi = new PTag("Wifi", "tag-style3");
 const t_package = new PTag("Package", "tag-style1");
 
+const t_docker = new PTag("Docker", "tag-style1");
+const t_docker_compose = new PTag("Docker Compose", "tag-style1");
+const t_containerized = new PTag("Containerized", "tag-style1");
+const t_api = new PTag("API", "tag-style2");
+const t_secure = new PTag("Secure", "tag-style2");
+const t_postgresql = new PTag("PostgreSQL", "tag-style3");
+const t_angular = new PTag("Angular", "tag-style3");
+
 // Programming Languages 
 const l_rust = new PLanguage("Rust", "#dea584");
 const l_hmtl = new PLanguage("HTML", "#e34c26");
@@ -182,13 +190,15 @@ const all_projects = [
         [t_flutter, t_package], [[l_dart, 100.0]]),
     new Project("Client Quote Generator", "project-7.png", "https://github.com",
         [t_python, t_pyqt, t_regex], [[l_python, 80.0], [l_cpp, 20.0]]),
+    new Project("Trackify: An Issue Tracker", "trackify.png", "./projects/trackify.html",
+        [t_docker, t_docker_compose, t_containerized, t_api, t_secure, t_postgresql, t_angular], [[l_python, 80.0], [l_cpp, 20.0]]),
 ];
 
 const projects = [
     all_projects[0],
     all_projects[2],
     all_projects[3],
-    all_projects[6]
+    all_projects[7]
 ];
 
 // Get container that holds each project

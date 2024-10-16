@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Template Project Page</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
+    <link rel="stylesheet" href="../styles/project.css">
+    <link rel="stylesheet" href="../mediaqueries.css">
+    <link rel="stylesheet" href="../styles/project_mediaqueries.css">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Scripts -->
+    <script src="../project_script.js"></script>
+    <script src="../components/project_tag.js"></script>
+    <script src="../components/project_code_breakdown.js"></script>
+    <script src="../components/project_link.js"></script>
+    <script src="../components/copy_button.js"></script>
+    <script src="../modules/pagedown-master/Markdown.Converter.js"> </script>
+</head>
+
+<body>
+    <!-- Back button and Header -->
+    <nav class="nav-header">
+        <button class="btn-style3 back-button" onclick="location.href='../index.html'">
+            <div class="btn-w-img-txt">
+                <img class="back-button-image" src="../assets/back-arrow.png" alt="Back">
+                Back
+            </div>
+        </button>
+        <button class="btn-style3 back-button-small" href="../index.html">
+            <img class="back-button-image" src="../assets/back-arrow.png" alt="Back">
+        </button>
+    </nav>
+
+    <div class="container">
+        <!-- Icon and title -->
+        <div class="project-header">
+            <img class="project-icon" src="../assets/package.png" alt="Project Icon">
+            <button class="btn-style3 project-github-button"
+                onclick="window.open('https://github.com/Trackify-Issue-Tracker/Trackify')">
+                <div class="btn-w-img-txt">
+                    <img class="github-icon" src="../assets/github_logo.png" alt="GitHub Icon">
+                    View GitHub
+                </div>
+            </button>
+        </div>
+
+        <!-- Title -->
+        <div class="project-title"></div>
+
+        <!-- Code Breakdown -->
+        <project-code-breakdown values="[30, 70]" names='["Python", "C++"]' colors='["#3572A5", "#f34b7d"]'
+            size="large"></project-code-breakdown>
+
+        <!-- Tags -->
+        <div class="project-tags-container">
+            <project-tag text="Docker" color="blue" size="large"></project-tag>
+            <project-tag text="Docker Compose" color="blue" size="large"></project-tag>
+            <project-tag text="Containerized" color="blue" size="large"></project-tag>
+            <project-tag text="API" color="magenta" size="large"></project-tag>
+            <project-tag text="Secure" color="magenta" size="large"></project-tag>
+            <project-tag text="Python" color="green" size="large"></project-tag>
+            <project-tag text="PostgreSQL" color="green" size="large"></project-tag>
+            <project-tag text="Angular" color="green" size="large"></project-tag>
+        </div>
+
+        <!-- Live Demo Link -->
+        <project-link url="https://issuetracker.setulparekh.com"></project-link>
+
+        <!-- README -->
+        <div class="readme-container"></div>
+
+        <!-- Side menu -->
+        <div class="side-menu">
+            <a class="side-menu-main">
+                <ul class="side-menu-bars"></ul>
+            </a>
+            <div class="side-menu-popup"></div>
+        </div>
+
+        <!-- Get Readme and make html of markdown, also add title -->
+        <script>
+            const url = "https://raw.githubusercontent.com/Trackify-Issue-Tracker/Trackify/nonprod/README.md";
+
+            createReadmeHtml(url);
+            createSideMenuBars();
+            createPopupSideMenuLinks();
+        </script>
+    </div>
+
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+    <script>
+        // Get container that holds jobs
+        const footer = document.querySelector("#footer");
+        footer.innerHTML += '<p class="gray-text">Copyright &#169; ' + new Date().getFullYear().toString() + ' Setul Parekh. All rights reserved.</p>';
+    </script>
+</body>
+
+</html>

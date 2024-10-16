@@ -21,3 +21,7 @@ class BaseElement {
         this.name = _name;
     }
 };
+
+// Get container that holds jobs
+const footer = document.querySelector("#footer");
+footer.innerHTML += '<p class="gray-text">Copyright &#169; ' + new Date().getFullYear().toString() + ' Setul Parekh. All rights reserved.</p>';
