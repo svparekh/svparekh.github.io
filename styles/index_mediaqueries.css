@@ -1,0 +1,250 @@
+/* 
+@media (min-width:320px)  { smartphones, iPhone, portrait 480x320 phones }
+@media (min-width:481px)  { portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. }
+@media (min-width:641px)  { portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones }
+@media (min-width:961px)  { tablet, landscape iPad, lo-res laptops ands desktops }
+@media (min-width:1025px) { big landscape tablets, laptops, and desktops }
+@media (min-width:1281px) { hi-res laptops and desktops } 
+*/
+
+@media screen and (max-width: 2000px) {}
+
+@media screen and (max-width: 1800px) {}
+
+@media screen and (max-width: 1600px) {
+    #full-nav-menu {
+        display: none;
+    }
+
+    #mini-nav-menu {
+        display: flex;
+    }
+}
+
+@media screen and (max-height: 700px) {
+
+    .section__pic-container {
+        padding-top: 3rem;
+    }
+
+    #profile {
+        margin-bottom: 6rem;
+    }
+}
+
+@media screen and (max-height: 800px) {
+
+
+    #about {
+        margin-bottom: 6rem;
+    }
+}
+
+@media screen and (max-height: 1200px) {
+
+
+    #experience {
+        margin-bottom: 6rem;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+
+    .about-containers {
+        flex-wrap: wrap;
+    }
+
+    .btn-container {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #socials-container {
+        display: none;
+    }
+
+    #socials-container-below {
+        display: flex;
+    }
+
+    #text1,
+    #text2 {
+        font-size: 50pt;
+    }
+
+    #container {
+        height: 50pt;
+    }
+
+    #experience,
+    .experience-details-container {
+        margin-top: 2rem;
+    }
+
+    #profile,
+    #about {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        vertical-align: center;
+        align-items: center;
+    }
+
+    .svg-endcap-left,
+    .svg-endcap-right {
+        width: 100px;
+    }
+
+    h1 {
+        font-size: 35pt;
+
+    }
+
+    h2 {
+        font-size: 30pt;
+    }
+
+    h3 {
+        font-size: 15pt;
+    }
+
+    .gray-text {
+        margin: 0 1.5rem;
+    }
+
+    .section__text__p1 {
+        margin: 2.5rem 1.5rem;
+    }
+
+    .section__text {
+        margin: 0 7vw 0 8vw;
+    }
+
+    section {
+        height: fit-content;
+        min-height: 100vh;
+    }
+
+    section {
+        margin: 0 5%;
+    }
+
+    .section__pic-container {
+        width: 375px;
+        height: 375px;
+        margin: 0 auto 2rem;
+        /* padding-top: 3rem; */
+    }
+
+    .about-containers {
+        margin-top: 0;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    #experience-container {
+        flex-direction: column;
+    }
+
+    .profile-pic {
+        /* width: min(40vh, 29vw); */
+        height: min(40vh, 35vw);
+    }
+
+    #footer-nav-menu {
+        transform: scale(0.75);
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        height: 40vh;
+    }
+
+    #footer-nav-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-endcaps {
+        display: none;
+    }
+
+    .profile-pic {
+        /* width: min(40vh, 29vw); */
+        height: min(40vh, 50vw);
+    }
+
+    /* #profile {
+        min-height: 83vh;
+        margin-bottom: 0;
+    } */
+
+    footer nav {
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
+
+    .about-containers .vertical-line {}
+
+    .about-containers {
+        gap: 0;
+    }
+
+    .details-container-col {
+        padding: 1.5rem 0;
+    }
+
+    .about-containers,
+    .contact-info-upper-container,
+    .contact-info-container {
+        margin: 0.5rem;
+    }
+
+    .contact-info-container p {
+        font-size: 1rem;
+    }
+
+    .experience-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .section__pic-container {
+        width: auto;
+        height: min(40vh, 50vw);
+        justify-content: center;
+    }
+
+    .profile-pic {}
+
+    .section__text__p2 {
+        font-size: 1.25rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .profile-btn-spacer {
+        padding: 0;
+    }
+
+    .translate-container:hover {
+        /* for mobile devices, disable */
+        cursor: default;
+        -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border: var(--c-btn-outline) 0.125rem solid;
+        -webkit-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+    }
+}

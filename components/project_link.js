@@ -27,7 +27,7 @@ class ProjectLink extends HTMLElement {
         mainDiv.style.borderRadius = '1rem';
         mainDiv.style.backgroundColor = 'var(--c-project-secondary)';
         mainDiv.style.color = '#444';
-        mainDiv.style.border = 'var(--b-outline)';
+        // mainDiv.style.border = 'var(--b-outline)';
 
         const leftDiv = document.createElement('div');
         leftDiv.style.display = 'flex';
@@ -71,14 +71,14 @@ class ProjectLink extends HTMLElement {
         // hover functionality
         mainDiv.addEventListener('mouseover', () => {
             mainDiv.style.backgroundColor = 'rgb(221, 215, 200)';
-            mainDiv.style.border = 'rgb(221, 215, 200) 0.155rem solid';
+            // mainDiv.style.border = 'rgb(221, 215, 200) 1px solid';
             // linkIcon.style.filter = 'invert(1)';
             // linkImg.style.filter = 'brightness(0.4);';
             // textDiv.style.color = 'var(--c-text-light)';
         });
         mainDiv.addEventListener('mouseout', () => {
             mainDiv.style.backgroundColor = 'var(--c-project-secondary)';
-            mainDiv.style.border = 'var(--b-outline)';
+            // mainDiv.style.border = 'var(--b-outline)';
             // linkIcon.style.filter = 'invert(0)';
             // linkImg.style.filter = 'invert(0)';
             // textDiv.style.color = 'var(--c-text-dark)';

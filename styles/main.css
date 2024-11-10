@@ -1,0 +1,163 @@
+/* General stuff */
+/* 
+Images:
+https://favicon.io/favicon-generator/
+https://unblast.com/free-digital-devices-mockup-psd/
+https://unsplash.com/photos/macbook-pro-on-top-of-brown-table-1SAnrIxw5OY
+https://www.pexels.com/photo/close-up-shot-of-a-mobile-phone-beside-a-keyboard-and-black-pencil-8490067/
+
+UI: uiverse.com
+
+*/
+/* Fonts */
+/* 
+- Font Title: Poppins
+- Font Author: Copyright 2020 The Poppins Project Authors (https://github.com/itfoundry/Poppins)
+- Font Source: http://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8V1tvFP-KUEg.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
+
+- Font Title: Charmonman
+- Font Author: Copyright 2018 The Charmonman Project Authors (https://github.com/cadsondemak/Charmonman)
+- Font Source: https://fonts.google.com/specimen/Charmonman?query=Charmonman
+- Font License: SIL Open Font License, 1.1 (https://openfontlicense.org/open-font-license-official-text/))
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Charmonman:wght@400;700&family=Reenie+Beanie&display=swap');
+
+* {
+    --c-text-dark: black;
+    --c-text-light: white;
+    --c-primary: #363636;
+    --c-active-primary: black;
+    --c-secondary: #EFE8D6;
+    --c-sticky-note: #FDFDC9;
+
+    --c-btn-outline: rgb(153, 153, 153, 0.3);
+    --c-offwhite: #f4f4f4;
+    --c-bg: #e8e8e8;
+    --c-bg-op: #e8e8e87f;
+    --c-primary-light: #666;
+    --c-primary-dark: #000000;
+    --c-grayscale-light: #d2d2d2;
+    --c-grayscale: #c8c8c8;
+    --c-grayscale-dark: #bcbcbc;
+    --c-project-secondary: #efe8d6;
+    --c-project-primary: #f8f3e8;
+    --c-btn-style3-hover: rgb(87, 87, 87);
+    --b-outline: rgba(54, 54, 54, 1) 1px solid;
+
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    /* Change highlight background color to black */
+    /* background: var(--c-primary-light); */
+    /* Change highlight text color to red */
+    /* color: #eee; */
+}
+
+::-moz-selection {
+    /* Change highlight background color to black */
+    /* background: var(--c-primary-light); */
+    /* Change highlight text color to red */
+    /* color: #eee; */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* footer */
+
+footer {
+    height: 26vh;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+footer p {
+    text-align: center;
+    color: #666;
+}
+
+
+/* --------- */
+/* SIDE MENU */
+/* --------- */
+.side-menu {
+    z-index: 998;
+    position: fixed;
+    top: 30%;
+    right: 55px;
+    transform: translateY(-50%);
+    background-color: #ffffff00;
+    transition: all 300ms ease 0s;
+    display: inline-block;
+}
+
+.side-menu:hover .side-menu-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50px, -50%);
+}
+
+.side-menu-main {
+    border-radius: 10px;
+    display: flex;
+}
+
+.side-menu-bars {
+    padding-left: 0px;
+    padding: 10px;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    text-align: right;
+    flex-flow: column;
+    position: relative;
+    float: right;
+}
+
+/* active bar */
+.side-menu-bar-active {
+    border: 1px solid black;
+}
+
+/* pop up */
+.side-menu-popup {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    right: -50px;
+    padding: 10px 10px;
+    transform: translateY(-50%);
+    background-color: var(--c-project-secondary);
+    border-radius: 10px;
+    flex-direction: column;
+    transition: all 300ms ease-in-out;
+}
+
+.side-menu-popup a {
+    display: block;
+    text-decoration: none;
+    text-align: left;
+    width: 100%;
+    font-weight: 500;
+    color: rgba(33, 28, 25, 0.6);
+    letter-spacing: 1px;
+}
+
+.side-menu-popup a:hover {
+    color: rgba(33, 28, 25, 1);
+}
+
+.side-menu-popup a div {
+    padding: 7px 15px;
+    border-radius: 7px;
+}

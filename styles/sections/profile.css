@@ -1,0 +1,201 @@
+/* ######################## */
+/* Profile Section Specific */
+/* ######################## */
+#profile {
+    padding-top: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* gap: 2rem; */
+    min-height: 90vh !important;
+}
+
+/* Credit: https://codepen.io/Valgo/pen/PowZaNY */
+#morph-container {
+    /* Center the text in the viewport. */
+    position: relative;
+    margin: auto;
+
+    /* width: 100vw; */
+    height: 96pt;
+    text-align: center;
+    /* top: 30%;
+    right: calc(7vh * 2 + 33%); */
+    /* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
+    filter: url(#threshold) blur(0.6px);
+}
+
+/* Your average text styling */
+#morph-text1,
+#morph-text2 {
+    color: var(--c-primary);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* left: -5vw; */
+    /* width: 100%; */
+    display: inline-block;
+
+    font-family: 'PP Eiko';
+    font-size: 96pt;
+
+    text-align: center;
+
+    -webkit-user-select: none;
+    user-select: none;
+
+}
+
+#morph-filters {
+    display: none;
+}
+
+/* Decorations */
+.svg-squiggle {
+    position: absolute;
+    left: 5%;
+    top: 13%;
+    width: 120px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+    transform: rotate(15deg);
+}
+
+.svg-scribble {
+    position: absolute;
+    right: 9%;
+    bottom: 10%;
+    width: 200px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+    /* transform: rotate(15deg); */
+}
+
+.svg-arrow {
+    position: absolute;
+    right: 5%;
+    top: 15%;
+    width: 150px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+    /* transform: rotate(15deg); */
+}
+
+#socials-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    gap: 1rem;
+}
+
+#socials-container-below {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem 0rem;
+    gap: 1rem;
+}
+
+#socials-container-below img,
+#socials-container img {
+    cursor: pointer;
+}
+
+.profile-btn-spacer {
+    padding: 1rem 0;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 1600px) {
+    .svg-arrow {
+        top: 2%;
+        right: 2%;
+        transform: rotate(-35deg);
+    }
+
+    .svg-scribble {
+        right: -5%;
+        bottom: 5%;
+        width: 150px;
+    }
+
+    .svg-squiggle {
+        left: 2%;
+        top: 5%;
+        width: 100px;
+    }
+
+    #morph-text1,
+    #morph-text2 {
+        font-size: 70pt;
+    }
+
+    #morph-container {
+        height: 70pt;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .svg-arrow {
+        top: 2%;
+        right: 2.5%;
+        transform: rotate(-45deg);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .svg-arrow {
+        top: 2rem;
+        right: 3rem;
+        width: 100px;
+    }
+
+    .svg-scribble {
+        display: none;
+    }
+
+    .svg-squiggle {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .svg-arrow {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    #morph-text1,
+    #morph-text2 {
+        font-size: 50pt;
+    }
+
+    #morph-container {
+        height: 50pt;
+    }
+
+
+
+}
+
+@media screen and (max-width: 425px) {}
+
+@media screen and (max-width: 375px) {}
+
+@media screen and (max-width: 320px) {}

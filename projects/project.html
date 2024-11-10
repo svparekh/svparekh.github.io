@@ -9,10 +9,11 @@
     <title>Template Project Page</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="stylesheet" href="../styles/project.css">
-    <link rel="stylesheet" href="../mediaqueries.css">
+    <link rel="stylesheet" href="../styles/transitions.css">
+
     <link rel="stylesheet" href="../styles/project_mediaqueries.css">
 
     <!-- favicon -->
@@ -22,18 +23,24 @@
     <link rel="manifest" href="../site.webmanifest">
 
     <!-- Scripts -->
-    <script src="../project_script.js"></script>
+    <script src="../scripts/script_project.js"></script>
+    <script src="../scripts/transition.js"></script>
+
     <script src="../components/project_tag.js"></script>
     <script src="../components/project_code_breakdown.js"></script>
     <script src="../components/project_link.js"></script>
     <script src="../components/copy_button.js"></script>
+
+    <!-- Pagedown -->
     <script src="../modules/pagedown-master/Markdown.Converter.js"> </script>
 </head>
 
 <body>
+    <div class="transition transition-1 is-active"></div>
+
     <!-- Back button and Header -->
     <nav class="nav-header">
-        <button class="btn-style3 back-button" onclick="location.href='../index.html'">
+        <button class="btn-style3 back-button" href="../index.html">
             <div class="btn-w-img-txt">
                 <img class="back-button-image" src="../assets/back-arrow.png" alt="Back">
                 Back
@@ -42,6 +49,15 @@
         <button class="btn-style3 back-button-small" href="../index.html">
             <img class="back-button-image" src="../assets/back-arrow.png" alt="Back">
         </button>
+    </nav>
+    <!-- Side menu -->
+    <nav>
+        <div class="side-menu">
+            <a class="side-menu-main">
+                <ul class="side-menu-bars"></ul>
+            </a>
+            <div class="side-menu-popup"></div>
+        </div>
     </nav>
 
     <div class="container">
@@ -82,19 +98,13 @@
         <!-- README -->
         <div class="readme-container"></div>
 
-        <!-- Side menu -->
-        <div class="side-menu">
-            <a class="side-menu-main">
-                <ul class="side-menu-bars"></ul>
-            </a>
-            <div class="side-menu-popup"></div>
-        </div>
+
 
         <!-- Get Readme and make html of markdown, also add title -->
         <script>
-            const url = "https://raw.githubusercontent.com/Trackify-Issue-Tracker/Trackify/nonprod/README.md";
+            const api_url = "https://raw.githubusercontent.com/Trackify-Issue-Tracker/Trackify/nonprod/README.md";
 
-            createReadmeHtml(url);
+            createReadmeHtml(api_url);
             createSideMenuBars();
             createPopupSideMenuLinks();
         </script>
@@ -102,12 +112,12 @@
 
 
     <!-- Footer -->
-    <footer id="footer"></footer>
-    <script>
-        // Get container that holds jobs
-        const footer = document.querySelector("#footer");
-        footer.innerHTML += '<p class="gray-text">Copyright &#169; ' + new Date().getFullYear().toString() + ' Setul Parekh. All rights reserved.</p>';
-    </script>
+    <footer id="footer">
+        <script>
+            const footer = document.querySelector("#footer");
+            footer.innerHTML += '<p class="gray-text">Copyright &#169; ' + new Date().getFullYear().toString() + ' Setul Parekh. All rights reserved.</p>';
+        </script>
+    </footer>
 </body>
 
 </html>

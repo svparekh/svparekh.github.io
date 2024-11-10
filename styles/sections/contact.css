@@ -1,0 +1,66 @@
+/* ######################## */
+/* Contact Section Specific */
+/* ######################## */
+#contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    min-height: 100vh;
+    height: auto;
+    align-items: center;
+    position: relative;
+    gap: 10vw;
+}
+
+.contact-info-upper-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 2rem;
+    /* background: var(--c-secondary); */
+    margin-top: 2rem;
+    padding: 0.5rem;
+    width: 600px;
+}
+
+.contact-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+
+.contact-info-container p {
+    font-size: larger;
+}
+
+.contact-info-container a {
+    color: var(--c-primary);
+}
+
+.contact-info-container a:hover {
+    color: var(--c-active-primary);
+}
+
+.svg-contact-circle {
+    position: absolute;
+    left: -90%;
+    top: -40%;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+
+@media screen and (max-width: 1200px) {
+    #contact {
+        flex-direction: column;
+    }
+
+    .about-title-container {
+        margin: 0;
+    }
+}

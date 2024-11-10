@@ -1,0 +1,59 @@
+/* ###################### */
+/* About Section Specific */
+/* ###################### */
+#about {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    min-height: 97vh;
+    height: auto;
+    align-items: center;
+    gap: 5vw;
+    justify-content: center;
+}
+
+.about-containers {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-details-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 750px;
+}
+
+.about-top-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.about-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.svg-bottom-divider {
+    width: 100%;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+@media screen and (max-width: 600px) {}
