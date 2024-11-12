@@ -23,6 +23,7 @@
     right: calc(7vh * 2 + 33%); */
     /* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
     filter: url(#threshold) blur(0.6px);
+
 }
 
 /* Your average text styling */
@@ -30,8 +31,9 @@
 #morph-text2 {
     color: var(--c-primary);
     position: absolute;
-    left: 50%;
+    /* left: 50%; */
     transform: translateX(-50%);
+    /* top: 30%; */
     /* left: -5vw; */
     /* width: 100%; */
     display: inline-block;
@@ -43,7 +45,6 @@
 
     -webkit-user-select: none;
     user-select: none;
-
 }
 
 #morph-filters {
@@ -109,6 +110,15 @@
     cursor: pointer;
 }
 
+.profile-pic {
+    transition: all 300ms ease 0s;
+    transform: scale(0);
+}
+
+.profile-pic.in-view {
+    transform: scale(1);
+}
+
 .profile-btn-spacer {
     padding: 1rem 0;
 }
@@ -118,6 +128,40 @@
     justify-content: center;
     gap: 1rem;
 }
+
+.profile-intro-text-container {
+    text-align: center;
+    overflow: wrap;
+    text-wrap: balance;
+    max-width: 500px;
+    position: relative;
+    margin: 3rem 0;
+    overflow: hidden;
+    /* position: relative; */
+
+}
+
+.profile-intro-text-container p {
+    transform: translateY(100%);
+    transition: all 300ms ease 0s;
+    margin: 0 !important;
+}
+
+.profile-intro-text-container .in-view {
+    transform: translateY(0);
+}
+
+.mouse-scroll-icon-container {
+    position: absolute;
+    bottom: 3.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mouse-scroll-icon-container img {
+    width: 50px;
+}
+
 
 @media screen and (max-width: 1600px) {
     .svg-arrow {
@@ -148,16 +192,70 @@
     }
 }
 
+@media screen and (max-width: 1400px) {
+    .btn-container {
+        flex-wrap: wrap;
+    }
+}
 
 @media screen and (max-width: 1200px) {
+    #socials-container {
+        display: none;
+    }
+
+    #socials-container-below {
+        display: flex;
+    }
+
+    #text1,
+    #text2 {
+        font-size: 50pt;
+    }
+
+    #profile {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        vertical-align: center;
+        align-items: center;
+    }
+
+    /* the profile quick intro text */
+    .profile-intro-text-container {
+        margin: 2.5rem 1.5rem !important;
+    }
+
+    /* the profile morph text container */
+    .section__text {
+        margin: 0 7vw 0 8vw;
+    }
+
+    .section__pic-container {
+        width: 375px;
+        height: 375px;
+        margin: 0 auto 2rem;
+        /* padding-top: 3rem; */
+    }
+
     .svg-arrow {
         top: 2%;
         right: 2.5%;
         transform: rotate(-45deg);
     }
+
+    .mouse-scroll-icon-container {
+        position: relative;
+        bottom: 0;
+    }
 }
 
 @media screen and (max-width: 900px) {
+    .profile-pic {
+        /* width: min(40vh, 29vw); */
+        height: min(40vh, 35vw);
+    }
+
     .svg-arrow {
         top: 2rem;
         right: 3rem;
@@ -174,8 +272,23 @@
 }
 
 @media screen and (max-width: 600px) {
+    .profile-pic {
+        /* width: min(40vh, 29vw); */
+        height: min(40vh, 50vw);
+    }
+
     .svg-arrow {
         display: none;
+    }
+
+    .section__pic-container {
+        width: auto;
+        height: min(40vh, 50vw);
+        justify-content: center;
+    }
+
+    .profile-btn-spacer {
+        padding: 0;
     }
 }
 
@@ -194,8 +307,19 @@
 
 }
 
-@media screen and (max-width: 425px) {}
+@media screen and (max-height: 700px) {
 
-@media screen and (max-width: 375px) {}
+    .section__pic-container {
+        padding-top: 3rem;
+    }
 
-@media screen and (max-width: 320px) {}
+    #profile {
+        margin-bottom: 6rem;
+    }
+}
+
+@media screen and (max-height: 950px) and (max-width: 1200px) {
+    .mouse-scroll-icon-container {
+        display: none;
+    }
+}

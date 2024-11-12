@@ -36,17 +36,17 @@
 </head>
 
 <body>
-    <div class="transition transition-1 is-active"></div>
+    <div class="transition slide-transition is-active"></div>
 
     <!-- Back button and Header -->
     <nav class="nav-header">
-        <button class="btn-style3 back-button" href="../index.html">
+        <button class="btn-style3 back-button" href="../#projects">
             <div class="btn-w-img-txt">
                 <img class="back-button-image" src="../assets/back-arrow.png" alt="Back">
                 Back
             </div>
         </button>
-        <button class="btn-style3 back-button-small" href="../index.html">
+        <button class="btn-style3 back-button-small" href="../#projects">
             <img class="back-button-image" src="../assets/back-arrow.png" alt="Back">
         </button>
     </nav>
@@ -98,13 +98,11 @@
         <!-- README -->
         <div class="readme-container"></div>
 
-
-
         <!-- Get Readme and make html of markdown, also add title -->
         <script>
-            const api_url = "https://raw.githubusercontent.com/Trackify-Issue-Tracker/Trackify/nonprod/README.md";
+            const apiUrl = "https://raw.githubusercontent.com/Trackify-Issue-Tracker/Trackify/nonprod/README.md";
 
-            createReadmeHtml(api_url);
+            createReadmeHtml(apiUrl);
             createSideMenuBars();
             createPopupSideMenuLinks();
         </script>

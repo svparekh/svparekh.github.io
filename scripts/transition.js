@@ -1,15 +1,17 @@
+// Grab elements that lead to another page and run page transition when clicked
+
 window.onload = function () {
-    const transitionElement = document.querySelector('.transition-1');
+    const transitionElement = document.querySelector('.slide-transition');
+
+    transitionElement.classList.remove('is-active');
+    // setTimeout(function () {
+    //     transitionElement.classList.remove('is-active');
+    // }, 300);
 
 
-    setTimeout(function () {
-        transitionElement.classList.remove('is-active');
-    }, 300);
-
-
-    let projectCards = document.querySelectorAll(".project-card-container");
-    let backButton = document.querySelector('.back-button');
-    let backButtonSmall = document.querySelector('.back-button-small');
+    const projectCards = document.querySelectorAll(".project-card-container");
+    const backButton = document.querySelector('.back-button');
+    const backButtonSmall = document.querySelector('.back-button-small');
 
     for (let i = 0; i < projectCards.length; i++) {
         const projectCard = projectCards[i];
@@ -28,7 +30,7 @@ window.onload = function () {
     if (backButton) {
         backButton.addEventListener('click', element => {
             element.preventDefault();
-            let target = element.target.getAttribute('href');
+            let target = backButton.getAttribute('href');
 
             transitionElement.classList.add('is-active');
 
@@ -40,7 +42,7 @@ window.onload = function () {
     if (backButtonSmall) {
         backButtonSmall.addEventListener('click', element => {
             element.preventDefault();
-            let target = element.target.getAttribute('href');
+            let target = backButtonSmall.getAttribute('href');
 
             transitionElement.classList.add('is-active');
 

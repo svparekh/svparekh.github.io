@@ -213,6 +213,7 @@
     .project-card-slide {
         justify-content: center;
         display: flex;
+        margin-left: 0;
     }
 }
 

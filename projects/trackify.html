@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="stylesheet" href="../styles/project.css">
-    <link rel="stylesheet" href="../styles/project_mediaqueries.css">
     <link rel="stylesheet" href="../styles/transitions.css">
+
+    <link rel="stylesheet" href="../styles/project_mediaqueries.css">
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
@@ -24,27 +25,39 @@
     <!-- Scripts -->
     <script src="../scripts/script_project.js"></script>
     <script src="../scripts/transition.js"></script>
+
     <script src="../components/project_tag.js"></script>
     <script src="../components/project_code_breakdown.js"></script>
     <script src="../components/project_link.js"></script>
     <script src="../components/copy_button.js"></script>
+
+    <!-- Pagedown -->
     <script src="../modules/pagedown-master/Markdown.Converter.js"> </script>
 </head>
 
 <body>
-    <div class="transition transition-1 is-active"></div>
+    <div class="transition slide-transition is-active"></div>
 
     <!-- Back button and Header -->
     <nav class="nav-header">
-        <button class="btn-style3 back-button" href="../index.html">
+        <button class="btn-style3 back-button" href="../#projects">
             <div class="btn-w-img-txt">
                 <img class="back-button-image" src="../assets/back-arrow.png" alt="Back">
                 Back
             </div>
         </button>
-        <button class="btn-style3 back-button-small" href="../index.html">
+        <button class="btn-style3 back-button-small" href="../#projects">
             <img class="back-button-image" src="../assets/back-arrow.png" alt="Back">
         </button>
+    </nav>
+    <!-- Side menu -->
+    <nav>
+        <div class="side-menu">
+            <a class="side-menu-main">
+                <ul class="side-menu-bars"></ul>
+            </a>
+            <div class="side-menu-popup"></div>
+        </div>
     </nav>
 
     <div class="container">
@@ -85,19 +98,11 @@
         <!-- README -->
         <div class="readme-container"></div>
 
-        <!-- Side menu -->
-        <div class="side-menu">
-            <a class="side-menu-main">
-                <ul class="side-menu-bars"></ul>
-            </a>
-            <div class="side-menu-popup"></div>
-        </div>
-
         <!-- Get Readme and make html of markdown, also add title -->
         <script>
-            const url = "https://raw.githubusercontent.com/Trackify-Issue-Tracker/Trackify/main/README.md";
+            const apiUrl = "https://raw.githubusercontent.com/Trackify-Issue-Tracker/Trackify/main/README.md";
 
-            createReadmeHtml(url);
+            createReadmeHtml(apiUrl);
             createSideMenuBars();
             createPopupSideMenuLinks();
         </script>

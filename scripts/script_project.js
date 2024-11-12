@@ -98,16 +98,16 @@ function createSideMenuBars() {
     }
 }
 
-window.addEventListener('hashchange', () => {
-    const currentHash = window.location.hash;
-    const headings = document.querySelectorAll('h2, h3, h4');
+// window.addEventListener('hashchange', () => {
+//     const currentHash = window.location.hash;
+//     const headings = document.querySelectorAll('h2, h3, h4');
 
-    headings.forEach(heading => {
-        const headingId = `#${heading.id}`;
-        if (headingId.toLowerCase() === currentHash) {
-            heading.classList.add('side-menu-bar-active');
-        } else {
-            heading.classList.remove('side-menu-bar-active');
-        }
-    });
-});
+//     headings.forEach(heading => {
+//         const headingId = `#${heading.id}`;
+//         if (headingId.toLowerCase() === currentHash) {
+//             heading.classList.add('side-menu-bar-active');
+//         } else {
+//             heading.classList.remove('side-menu-bar-active');
+//         }
+//     });
+// });

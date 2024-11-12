@@ -82,6 +82,7 @@ function generateTimeline(sections) {
         // add text to the tooltip
         const tooltipText = document.createElement("p");
         tooltipText.textContent = section.tooltip;
+        tooltipText.style.color = "var(--c-text-light)";
         tooltip.appendChild(tooltipText);
         // add tooltip to the timeline (so we can calculate the location)
         timelineContainer.appendChild(tooltip);

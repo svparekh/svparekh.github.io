@@ -23,6 +23,10 @@ h3 {
     font-family: 'PP Eiko';
 }
 
+p {
+    color: var(--c-primary);
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--c-secondary);
@@ -145,14 +149,6 @@ a:hover {
     color: var(--c-primary);
 }
 
-.details-container-col {
-    padding: 1.5rem;
-    flex: 1;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-
 .details-container-row {
     padding: 1.5rem;
     flex: 1;
@@ -247,7 +243,7 @@ nav {
     padding: 10px;
     text-align: center;
     font-size: 1.5rem;
-    text-decoration: none;
+    /* text-decoration: none; */
     transition: all 300ms ease 0s;
 }
 
@@ -312,7 +308,7 @@ nav {
 /* ############### */
 section {
     padding-top: 4vh;
-    height: 96vh;
+    /* min-height: 96vh; */
     margin: 0 10rem;
     box-sizing: border-box;
     min-height: -moz-fit-content;
@@ -348,21 +344,22 @@ section {
     font-weight: 600;
 }
 
-.section__text__p1 {
-    text-align: center;
-    overflow: wrap;
-    text-wrap: balance;
-    max-width: 500px;
-    position: relative;
-    margin: 3rem 0;
-    /* top: 50%; */
-}
-
 .section__text__p2 {
     font-size: 1.75rem;
     margin-bottom: 1rem;
 }
 
-.text-container {
-    text-align: center;
+.title-container {
+    overflow: hidden;
+}
+
+.title-container h1,
+h2 {
+    transform: translateY(100%);
+    transition: all 300ms ease 0s;
+}
+
+.title-container h1.in-view,
+h2.in-view {
+    transform: translateY(0);
 }

@@ -5,23 +5,6 @@ function toggleMenu() {
     icon.classList.toggle("open");
 }
 
-// Classes
-class BaseElement {
-    // Abstract class: https://medium.com/@rheedhar/abstract-classes-in-javascript-d6510afac958
-    constructor(_name) {
-        if (this.constructor == BaseElement) {
-            throw new Error("Class is of abstract type and can't be instantiated");
-        };
-
-        if (this.toHTML == undefined) {
-            throw new Error("toHTML method must be implemented");
-        };
-        this.name = _name;
-    }
-};
-
-
-
 function createPopupSideMenuLinks() {
     // get all h2, h3, and h4 tags from html and create a list of their ids
     const sideMenuPopup = document.querySelector('.side-menu-popup');
@@ -77,35 +60,6 @@ function createSideMenuBars() {
         barList.appendChild(listItem);
     }
 }
-
-// TODO: Fix this
-window.addEventListener('hashchange', () => {
-    const currentHash = window.location.hash;
-    const headings = document.querySelectorAll('h2, h3, h4');
-
-    headings.forEach(heading => {
-        const headingId = `#${heading.id}`;
-        if (headingId.toLowerCase() === currentHash) {
-            heading.classList.add('side-menu-bar-active');
-        } else {
-            heading.classList.remove('side-menu-bar-active');
-        }
-    });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function runTextMorphScript() {
     /*
@@ -201,5 +155,3 @@ function runTextMorphScript() {
     // Start the animation.
     animate();
 }
-
-

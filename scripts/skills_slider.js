@@ -34,6 +34,7 @@ function generateSkills(skills) {
 
             const iconElement = document.createElement('img');
             iconElement.src = icon;
+            iconElement.alt = name;
             iconElement.style.width = '64px';
             iconElement.style.height = '64px';
             iconElement.style.verticalAlign = 'middle';
@@ -45,6 +46,7 @@ function generateSkills(skills) {
             nameText.textContent = name;
             nameText.style.display = 'inline-block';
             nameText.style.opacity = '0';
+            nameText.classList.add('skill-name-text');
             nameText.style.textWrap = 'nowrap';
             nameText.style.textAlign = 'center';
             nameText.style.margin = '0px';
@@ -56,29 +58,14 @@ function generateSkills(skills) {
             nameText.style.transition = 'all 300ms ease 0s';
             tagElement.appendChild(nameText);
 
-            const expText = document.createElement('p');
-            expText.textContent = exerpience;
-            expText.style.display = 'inline-block';
-            expText.style.textAlign = 'center';
-            expText.style.opacity = '0';
-            expText.style.margin = '0px';
-            expText.style.fontSize = '12px';
-            expText.style.fontFamily = 'PP Eiko';
-            expText.style.position = 'absolute';
-            expText.style.bottom = '-36pt';
-            expText.style.transition = 'all 300ms ease 0s';
-            // tagElement.appendChild(expText);
-
             // on hover, show name and experience as well as make the icon larger
             tagElement.addEventListener('mouseover', () => {
                 iconElement.style.transition = 'all 300ms ease 0s';
                 nameText.style.opacity = '1';
-                expText.style.opacity = '1';
             });
             tagElement.addEventListener('mouseout', () => {
                 iconElement.style.transition = 'all 300ms ease 0s';
                 nameText.style.opacity = '0';
-                expText.style.opacity = '0';
             });
 
             tagElement.addEventListener('mousedown', () => {
@@ -117,7 +104,7 @@ function generateSkills(skills) {
                 setTimeout(() => {
                     const skillPopupCard = document.getElementById('skill-popup-card');
                     skillPopupCard.style.transform = 'rotateY(180deg)';
-                }, 200);
+                }, 100);
             });
 
             // Add event listener to the tag element
@@ -189,40 +176,4 @@ function generateSkills(skills) {
             // container.appendChild(skill_tag);
         }
     }
-
-    const skill_swiper = new Swiper('.skill-swiper', {
-        loop: true,
-        loopAdditionalSlides: skills.length,
-        freeMode: {
-            enabled: true,
-            momentumVelocityRatio: 0.25,
-        },
-        freeModeMomentum: true,
-        grabCursor: true,
-        centeredSlides: true,
-        navigation: false,
-        spaceBetween: 0,
-
-        autoplay: {
-            enabled: true,
-            delay: -1,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-        },
-        speed: 1000,
-        breakpoints: {
-            640: {
-                slidesPerView: 3,
-            },
-            768: {
-                slidesPerView: 4,
-            },
-            1024: {
-                slidesPerView: 5,
-            },
-            1600: {
-                slidesPerView: 8,
-            }
-        },
-    });
 }

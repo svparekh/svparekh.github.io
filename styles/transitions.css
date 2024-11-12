@@ -1,4 +1,4 @@
-.transition-1 {
+.slide-transition {
     position: fixed;
     left: -100%;
     width: 100%;
@@ -9,6 +9,15 @@
     transition: all 300ms ease 0s;
 }
 
-.transition-1.is-active {
+.slide-transition.is-active {
     left: 0px;
+}
+
+.animate-on-view {
+    /* transition: all 300ms ease 0s; */
+    transition-delay: 200ms !important;
+}
+
+.no-animate-on-view {
+    transform: translateY(0) !important;
 }
