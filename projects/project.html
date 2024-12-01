@@ -8,6 +8,13 @@
 
     <title>Template Project Page</title>
 
+    <!-- Pagedown -->
+    <script src="../modules/pagedown-master/Markdown.Converter.js"> </script>
+
+    <!-- Highlight.JS -->
+    <link rel="stylesheet" href="../modules/highlight/styles/atom-one-light.min.css">
+    <script src="../modules/highlight/highlight.min.js"></script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/buttons.css">
@@ -30,9 +37,6 @@
     <script src="../components/project_code_breakdown.js"></script>
     <script src="../components/project_link.js"></script>
     <script src="../components/copy_button.js"></script>
-
-    <!-- Pagedown -->
-    <script src="../modules/pagedown-master/Markdown.Converter.js"> </script>
 </head>
 
 <body>
@@ -100,11 +104,12 @@
 
         <!-- Get Readme and make html of markdown, also add title -->
         <script>
-            const apiUrl = "https://raw.githubusercontent.com/Trackify-Issue-Tracker/Trackify/nonprod/README.md";
+            const apiUrl = "https://raw.githubusercontent.com/svparekh/Package-Registry-Project-ACMEIR/master/README.md";
 
             createReadmeHtml(apiUrl);
             createSideMenuBars();
             createPopupSideMenuLinks();
+            hljs.highlightAll();
         </script>
     </div>
 

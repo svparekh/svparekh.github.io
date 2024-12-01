@@ -91,11 +91,11 @@ footer p {
 /* SIDE MENU */
 /* --------- */
 .side-menu {
-    z-index: 998;
+    z-index: 100;
     position: fixed;
-    top: 30%;
+    top: 25vh;
     right: 55px;
-    transform: translateY(-50%);
+    transform: translateY(0%);
     background-color: #ffffff00;
     transition: all 300ms ease 0s;
     display: inline-block;
@@ -104,7 +104,7 @@ footer p {
 .side-menu:hover .side-menu-popup {
     opacity: 1;
     visibility: visible;
-    transform: translate(-50px, -50%);
+    transform: translate(-50px, 0%);
 }
 
 .side-menu-main {
@@ -135,12 +135,16 @@ footer p {
     opacity: 0;
     position: fixed;
     right: -50px;
+    top: 0;
     padding: 10px 10px;
-    transform: translateY(-50%);
+    transform: translateY(0%);
     background-color: var(--c-project-secondary);
     border-radius: 10px;
     flex-direction: column;
     transition: all 300ms ease-in-out;
+    max-height: 50vh;
+    overflow-y: auto;
+    scrollbar-color: #6d6d6d var(--c-secondary);
 }
 
 .side-menu-popup a {

@@ -148,13 +148,13 @@ const l_dockerfile = new PLanguage("Dockerfile", "#384d54");
 
 // Projects
 const all_projects = [
-    new Project("Internal Package Registry", "project-1.png", "https://github.com/svparekh/Package-Registry-ECE461-Project-ACMEIR",
+    new Project("Internal Package Registry", "project-1.png", "./projects/acmeir.html",
         [t_aws, t_agile, t_scrum, t_rest_api, t_cli], [[l_rust, 37.0], [l_dart, 32.7], [l_python, 26.6], [l_shell, 2.4], [l_other, 1.3]],
         "Built an internal package registry using Rust, Dart, and Python, leveraging AWS and Agile methodologies, to create a scalable and efficient package management system."),
-    new Project("Procedural Terrain", "project-2.png", "https://github.com/svparekh/ProceduralPlanet",
+    new Project("Procedural Terrain", "project-2.png", "./projects/proceduralplanet.html",
         [t_opengl, t_freeglut, t_raymarching, t_sdf, t_perlin, t_phong], [[l_cpp, 84.6], [l_c, 13.6], [l_glsl, 1.7], [l_other, 0.1]],
         "Created a procedural terrain generator using C++, OpenGL, and GLSL, incorporating techniques such as raymarching, SDF, Perlin noise, and Phong shading. This project demonstrated my understanding of computer graphics and procedural generation techniques."),
-    new Project("Cloud-Enabled Fingerprint Scanner", "project-3.png", "https://github.com/Senior-Design-ECE-477/ESP32",
+    new Project("Cloud-Enabled Fingerprint Scanner", "project-3.png", "./projects/fingerprint_scanner.html",
         [t_aws, t_esp32, t_espidf, t_rest_api, t_pcb, t_embedded, t_spi, t_uart, t_wifi], [[l_c, 99.9], [l_other, 0.1]],
         "Developed a cloud-enabled fingerprint scanner using ESP32, AWS, and REST API, showcasing my ability to create secure and efficient biometric authentication systems with microcontrollers and cloud-based technologies."),
     new Project("Cloud-Enabled TaskApp", "project-4.png", "https://github.com/svparekh/TaskApp",
@@ -163,10 +163,10 @@ const all_projects = [
     new Project("This Website", "project-5.png", "https://github.com/svparekh/svparekh.github.io",
         [t_html, t_css, t_js], [[l_css, 44.9], [l_js, 34.1], [l_hmtl, 21.0]],
         "Designed and developed this personal website using HTML, CSS, and JavaScript, with a focus on responsive design and user experience. This project showcased my ability to work with front-end web development technologies and create a visually appealing and functional website."),
-    new Project("Flutter Package: SMenus", "project-6.png", "https://github.com/svparekh/FlutterMenus",
+    new Project("Flutter Package: SMenus", "project-6.png", "https://pub.dev/packages/flutter_smenus",
         [t_flutter, t_package], [[l_dart, 100.0]],
         "Created a Flutter package for customizable menus, using Dart programming language. This project demonstrated my ability to work with Flutter and create reusable UI components."),
-    new Project("Client Quote Generator", "project-7.png", "https://github.com",
+    new Project("Client Quote Generator", "project-7.png", "./projects/client_quote_generator.html",
         [t_python, t_pyqt, t_regex], [[l_python, 80.0], [l_cpp, 20.0]],
         "Developed a client quote generator using Python, PyQt, and regular expressions, with a focus on automating tasks and improving efficiency. This project showcased my ability to work with Python and create desktop applications."),
     new Project("Trackify: An Issue Tracker", "trackify/trackify.png", "./projects/trackify.html",
@@ -179,8 +179,8 @@ const projects = [
     all_projects[0],
     all_projects[7],
     all_projects[2],
-    all_projects[3],
-    all_projects[4],
+    // all_projects[3],
+    // all_projects[4],
     all_projects[5],
     all_projects[6],
 ];
@@ -232,9 +232,17 @@ const skill_swiper = new Swiper('.skill-swiper', {
         0: {
             slidesPerView: 2,
             spaceBetween: -55,
+            freeMode: {
+                enabled: true,
+                momentumVelocityRatio: 1,
+            },
         },
         640: {
             slidesPerView: 3,
+            freeMode: {
+                enabled: true,
+                momentumVelocityRatio: 0.5,
+            },
         },
         768: {
             slidesPerView: 4,

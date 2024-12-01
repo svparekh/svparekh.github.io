@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Procedural Planet built with OpenGL and GLSL</title>
+
+    <!-- Pagedown -->
+    <script src="../modules/pagedown-master/Markdown.Converter.js"> </script>
+
+    <!-- Highlight.JS -->
+    <link rel="stylesheet" href="../modules/highlight/styles/atom-one-light.min.css">
+    <script src="../modules/highlight/highlight.min.js"></script>
+    <script src="../modules/highlight/languages/glsl.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
+    <link rel="stylesheet" href="../styles/project.css">
+    <link rel="stylesheet" href="../styles/transitions.css">
+
+    <link rel="stylesheet" href="../styles/project_mediaqueries.css">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Scripts -->
+    <script src="../scripts/script_project.js"></script>
+    <script src="../scripts/transition.js"></script>
+
+    <script src="../components/project_tag.js"></script>
+    <script src="../components/project_code_breakdown.js"></script>
+    <script src="../components/project_link.js"></script>
+    <script src="../components/copy_button.js"></script>
+</head>
+
+<body>
+    <div class="transition slide-transition is-active"></div>
+
+    <!-- Back button and Header -->
+    <nav class="nav-header">
+        <button class="btn-style3 back-button" href="../#projects">
+            <div class="btn-w-img-txt">
+                <img class="back-button-image" src="../assets/back-arrow.png" alt="Back">
+                Back
+            </div>
+        </button>
+        <button class="btn-style3 back-button-small" href="../#projects">
+            <img class="back-button-image" src="../assets/back-arrow.png" alt="Back">
+        </button>
+    </nav>
+    <!-- Side menu -->
+    <nav>
+        <div class="side-menu">
+            <a class="side-menu-main">
+                <ul class="side-menu-bars"></ul>
+            </a>
+            <div class="side-menu-popup"></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Icon and title -->
+        <div class="project-header">
+            <img class="project-icon" src="../assets/package.png" alt="Project Icon">
+            <button class="btn-style3 project-github-button"
+                onclick="window.open('https://github.com/svparekh/ProceduralPlanet')">
+                <div class="btn-w-img-txt">
+                    <img class="github-icon" src="../assets/github_logo.png" alt="GitHub Icon">
+                    View GitHub
+                </div>
+            </button>
+        </div>
+
+        <!-- Title -->
+        <div class="project-title"></div>
+
+        <!-- Code Breakdown -->
+        <project-code-breakdown values="[84.6, 13.6, 1.7, 0.1]" names='["C++", "C", "GLSL", "Other"]'
+            colors='["#f34b7d", "#555555", "#5686a5", "#b1b1b1"]' size="large"></project-code-breakdown>
+
+        <!-- Tags -->
+        <div class="project-tags-container">
+            <project-tag text="OpenGL" color="blue" size="large"></project-tag>
+            <project-tag text="FreeGLUT" color="blue" size="large"></project-tag>
+            <project-tag text="Matrix Operations" color="magenta" size="large"></project-tag>
+            <project-tag text="Ray Marching" color="green" size="large"></project-tag>
+            <project-tag text="Signed Distance Fields" color="green" size="large"></project-tag>
+            <project-tag text="Perlin Noise" color="green" size="large"></project-tag>
+            <project-tag text="Phong Shading" color="green" size="large"></project-tag>
+            <project-tag text="Fractal Brownian Motion" color="green" size="large"></project-tag>
+        </div>
+
+        <!-- Live Demo Link -->
+        <!-- <project-link url="https://issuetracker.setulparekh.com"></project-link> -->
+
+        <!-- README -->
+        <div class="readme-container"></div>
+
+        <!-- Get Readme and make html of markdown, also add title -->
+        <script>
+            const apiUrl = "https://raw.githubusercontent.com/svparekh/ProceduralPlanet/main/README.md";
+
+            createReadmeHtml(apiUrl);
+            createSideMenuBars();
+            createPopupSideMenuLinks();
+            hljs.highlightAll();
+        </script>
+    </div>
+
+
+    <!-- Footer -->
+    <footer id="footer">
+        <script>
+            const footer = document.querySelector("#footer");
+            footer.innerHTML += '<p class="gray-text">Copyright &#169; ' + new Date().getFullYear().toString() + ' Setul Parekh. All rights reserved.</p>';
+        </script>
+    </footer>
+</body>
+
+</html>

@@ -8,6 +8,14 @@
 
     <title>Trackify: An Issue Tracker</title>
 
+    <!-- Pagedown -->
+    <script src="../modules/pagedown-master/Markdown.Converter.js"> </script>
+
+    <!-- Highlight.JS -->
+    <link rel="stylesheet" href="../modules/highlight/styles/atom-one-light.min.css">
+    <script src="../modules/highlight/highlight.min.js"></script>
+    <script src="../modules/highlight/languages/bash.min.js"></script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/buttons.css">
@@ -30,9 +38,6 @@
     <script src="../components/project_code_breakdown.js"></script>
     <script src="../components/project_link.js"></script>
     <script src="../components/copy_button.js"></script>
-
-    <!-- Pagedown -->
-    <script src="../modules/pagedown-master/Markdown.Converter.js"> </script>
 </head>
 
 <body>
@@ -105,6 +110,7 @@
             createReadmeHtml(apiUrl);
             createSideMenuBars();
             createPopupSideMenuLinks();
+            hljs.highlightAll();
         </script>
     </div>
 

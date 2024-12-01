@@ -39,6 +39,11 @@ function createPopupSideMenuLinks() {
         const div = document.createElement('div'); // this is the one with margin left
         div.textContent = heading.textContent;
         div.style.paddingRight = '35px';
+        div.style.transition = 'color 300ms ease 0s';
+
+        if (allHeadings.length > 15) {
+            div.style.fontSize = '13px';
+        }
 
         if (headingLevel === 2) {
             div.style.marginLeft = '0px';  // Longest line for h2

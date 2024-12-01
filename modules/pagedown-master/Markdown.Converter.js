@@ -709,7 +709,7 @@ else
             }
             url = attributeSafeUrl(url);
 
-            var result = "<a href=\"" + url + "\"";
+            var result = "<a class=\"markdown-link\" href=\"" + url + "\"";
 
             if (title != "") {
                 title = attributeEncode(title);
@@ -1114,28 +1114,31 @@ else
                     codeblock = codeblock.replace(/\n+$/g, ""); // trim trailing whitespace
 
                     var classAttr = lang ? ` class="language-${lang}"` : "";
-                    codeblock = `<div class="code-block-div"><pre><code${classAttr}>` + codeblock + `\n</code></pre><copy-button copy-content="${codeblock}"></copy-button></div>`;
+                    codeblock = `<div class="code-block-div"><div class="code-block-scroll"><pre><code${classAttr}>` + codeblock + `\n</code></pre></div><copy-button copy-content="${codeblock}"></copy-button></div>`;
 
                     return "\n\n" + codeblock + "\n\n" + nextChar;
                 }
             );
 
             // Match indented code blocks
-            text = text.replace(/(?:\n\n|^\n?)((?:(?:[ ]{4}|\t).*\n+)+)(\n*[ ]{0,3}[^ \t\n]|(?=~0))/g,
-                function (wholeMatch, m1, m2) {
-                    var codeblock = m1;
-                    var nextChar = m2;
+            if (!text) {
+                text = text.replace(/(?:\n\n|^\n?)((?:(?:[ ]{4}|\t).*\n+)+)(\n*[ ]{0,3}[^ \t\n]|(?=~0))/g,
+                    function (wholeMatch, m1, m2) {
+                        var codeblock = m1;
+                        var nextChar = m2;
 
-                    codeblock = _EncodeCode(_Outdent(codeblock));
-                    codeblock = _Detab(codeblock);
-                    codeblock = codeblock.replace(/^\n+/g, ""); // trim leading newlines
-                    codeblock = codeblock.replace(/\n+$/g, ""); // trim trailing whitespace
+                        codeblock = _EncodeCode(_Outdent(codeblock));
+                        codeblock = _Detab(codeblock);
+                        codeblock = codeblock.replace(/^\n+/g, ""); // trim leading newlines
+                        codeblock = codeblock.replace(/\n+$/g, ""); // trim trailing whitespace
 
-                    codeblock = `<div class="code-block-div"><pre><code>` + codeblock + `\n</code></pre><copy-button copy-content="${codeblock}"></copy-button></div>`;
+                        var classAttr = lang ? ` class="language-${lang}"` : "";
+                        codeblock = `<div class="code-block-div"><div class="code-block-scroll"><pre><code${classAttr}>` + codeblock + `\n</code></pre></div><copy-button copy-content="${codeblock}"></copy-button></div>`;
 
-                    return "\n\n" + codeblock + "\n\n" + nextChar;
-                }
-            );
+                        return "\n\n" + codeblock + "\n\n" + nextChar;
+                    }
+                );
+            }
 
             // attacklab: strip sentinel
             text = text.replace(/~0/, "");
@@ -1559,7 +1562,7 @@ else
             var replacer = function (wholematch, m1) {
                 var url = attributeSafeUrl(m1);
 
-                return "<a href=\"" + url + "\">" + pluginHooks.plainLinkText(m1) + "</a>";
+                return "<a class=\"markdown-link\" href=\"" + url + "\">" + pluginHooks.plainLinkText(m1) + "</a>";
             };
             text = text.replace(/<((https?|ftp):[^'">\s]+)>/gi, replacer);
 
