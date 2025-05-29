@@ -75,8 +75,11 @@ function runTextMorphScript() {
     const texts = [
         "Developer.",
         "Enthusiast.",
+        "Engineer.",
         "Backend.",
-        "Kubernetes.",
+        "Programmer.",
+        "Server-side.",
+        // "Architect.",
     ];
 
     // Controls the speed of morphing.
