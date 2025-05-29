@@ -78,7 +78,9 @@ function runTextMorphScript() {
         "Engineer.",
         "Backend.",
         "Programmer.",
-        "Server-side.",
+        "Designer.",
+        "Circuits.",
+        "Electrical."
         // "Architect.",
     ];
 
