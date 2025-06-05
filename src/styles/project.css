@@ -288,3 +288,8 @@ th {
     overflow-y: hidden;
     scrollbar-color: #c0c0c0 rgba(41, 41, 41, 0);
 }
+
+.table-container::-webkit-scrollbar {
+    height: 7px;
+    background-color: rgba(41, 41, 41, 0);
+}
