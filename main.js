@@ -1,88 +1,102 @@
+import Swiper from "swiper";
+import { Navigation, Pagination, Autoplay, FreeMode } from 'swiper/modules';
+import { PTag, PLanguage, Project, generateProjects } from "./src/scripts/gen_projects.js";
+import { TimelineSection, generateTimeline } from "./src/scripts/gen_timeline.js";
+import { ExpLevels, Skill, generateSkills } from "./src/scripts/gen_skills.js";
+import { createSideMenuBarsForPortfolio, createPopupSideMenuLinksForPortfolio, runTextMorphScript, toggleMenu } from "./src/scripts/script_index.js";
+
+
+// Set toggle menu as global
+window.toggleMenu = toggleMenu;
+
+// Skills
 const skills = [
     new Skill({
-        name: "Python", experience: ExpLevels.high, icon: "./assets/logos/python.png",
+        name: "Python", experience: ExpLevels.high, icon: new URL('./src/assets/logos/python.png?as=webp', import.meta.url),
         description: "Proficient in Python programming language with extensive experience in developing scalable and efficient applications.",
     }),
     new Skill({
-        name: "Docker", experience: ExpLevels.high, icon: "./assets/logos/docker.png",
+        name: "Docker", experience: ExpLevels.high, icon: new URL('./src/assets/logos/docker.png?as=webp', import.meta.url),
         description: "Skilled in containerization using Docker, with experience in creating and managing containerized applications.",
     }),
     new Skill({
-        name: "C++", experience: ExpLevels.med, icon: "./assets/logos/cpp.png",
+        name: "C++", experience: ExpLevels.med, icon: new URL('./src/assets/logos/cpp.png?as=webp', import.meta.url),
         description: "Familiar with C++ programming language, with experience in developing applications that require performance and efficiency.",
     }),
     new Skill({
-        name: "Git", experience: ExpLevels.high, icon: "./assets/logos/git.png",
+        name: "Git", experience: ExpLevels.high, icon: new URL('./src/assets/logos/git.png?as=webp', import.meta.url),
         description: "Proficient in version control using Git, with experience in managing code repositories and collaborating with teams.",
     }),
     new Skill({
-        name: "Agile", experience: ExpLevels.med, icon: "./assets/logos/agile.png",
+        name: "Agile", experience: ExpLevels.med, icon: new URL('./src/assets/logos/agile.png?as=webp', import.meta.url),
         description: "Knowledgeable about Agile development methodologies, with experience in working on projects that follow Agile principles.",
     }),
     new Skill({
-        name: "Scrum", experience: ExpLevels.med, icon: "./assets/logos/scrum.svg",
+        name: "Scrum", experience: ExpLevels.med, icon: new URL('./src/assets/logos/scrum.svg?as=webp', import.meta.url),
         description: "Familiar with Scrum framework, with experience in working on projects that follow Scrum principles.",
     }),
     new Skill({
-        name: "Algorithms", experience: ExpLevels.high, icon: "./assets/logos/algorithms.png",
+        name: "Algorithms", experience: ExpLevels.high, icon: new URL('./src/assets/logos/algorithms.png?as=webp', import.meta.url),
         description: "Skilled in designing and implementing efficient algorithms, with experience in solving complex problems.",
     }),
     new Skill({
-        name: "Data Structures", experience: ExpLevels.high, icon: "./assets/logos/data-structures.png",
+        name: "Data Structures", experience: ExpLevels.high, icon: new URL('./src/assets/logos/data-structures.png?as=webp', import.meta.url),
         description: "Proficient in working with various data structures, including arrays, linked lists, trees, and graphs.",
     }),
     new Skill({
-        name: "Cloud Computing", experience: ExpLevels.med, icon: "./assets/logos/cloud-computing.png",
+        name: "Cloud Computing", experience: ExpLevels.med, icon: new URL('./src/assets/logos/cloud-computing.png?as=webp', import.meta.url),
         description: "Familiar with cloud computing concepts, including cloud native, infrastructure, platform, and software as a service.",
     }),
     new Skill({
-        name: "REST", experience: ExpLevels.med, icon: "./assets/logos/rest.png",
+        name: "REST", experience: ExpLevels.med, icon: new URL('./src/assets/logos/rest.png?as=webp', import.meta.url),
         description: "Knowledgeable about RESTful API design, with experience in developing and consuming RESTful APIs.",
     }),
     new Skill({
-        name: "AWS", experience: ExpLevels.med, icon: "./assets/logos/aws.png",
+        name: "AWS", experience: ExpLevels.med, icon: new URL('./src/assets/logos/aws.png?as=webp', import.meta.url),
         description: "Familiar with Amazon Web Services, including EC2, S3, and Lambda.",
     }),
     new Skill({
-        name: "Azure", experience: ExpLevels.low, icon: "./assets/logos/azure.png",
+        name: "Azure", experience: ExpLevels.low, icon: new URL('./src/assets/logos/azure.png?as=webp', import.meta.url),
         description: "Basic knowledge of Microsoft Azure, including Azure Compute and Azure Storage.",
     }),
     new Skill({
-        name: "GCP", experience: ExpLevels.low, icon: "./assets/logos/gcp.png",
+        name: "GCP", experience: ExpLevels.low, icon: new URL('./src/assets/logos/gcp.png?as=webp', import.meta.url),
         description: "Basic knowledge of Google Cloud Platform, including Compute Engine and Cloud Storage.",
     }),
     new Skill({
-        name: "Terraform", experience: ExpLevels.low, icon: "./assets/logos/terraform.png",
+        name: "Terraform", experience: ExpLevels.low, icon: new URL('./src/assets/logos/terraform.png?as=webp', import.meta.url),
         description: "Basic knowledge of Terraform, including infrastructure as code and configuration management.",
     }),
     new Skill({
-        name: "Firebase", experience: ExpLevels.med, icon: "./assets/logos/firebase.png",
+        name: "Firebase", experience: ExpLevels.med, icon: new URL('./src/assets/logos/firebase.png?as=webp', import.meta.url),
         description: "Familiar with Firebase, including Realtime Database, Firestore, and Authentication.",
     })
 ];
 
+// Timeline
+const progIcon = new URL('./src/assets/logos/progressive.png?as=webp', import.meta.url);
 const timelineSections = [
     new TimelineSection({
         startDate: new Date(2020, 7), endDate: new Date(2024, 5),
-        color: '#8E6F3E', tooltip: 'Purdue University', icon: './assets/logos/purdue.png',
+        color: '#8E6F3E', tooltip: 'Purdue University', icon: new URL('./src/assets/logos/purdue.png?as=webp', import.meta.url),
         title: 'B.S. in Computer Engineering at Purdue University',
         description: "Earned a comprehensive degree in Computer Engineering, building a strong foundation in computer systems, software development, and digital electronics. Developed a solid understanding of computer architecture, algorithms, and data structures, preparing for a career in technology and innovation."
     }),
     new TimelineSection({
         startDate: new Date(2021, 4), endDate: new Date(2021, 7),
-        color: '#239b5d', tooltip: 'Aurora Circuits', icon: './assets/logos/aurora_circuits.png',
+        color: '#239b5d', tooltip: 'Aurora Circuits', icon: new URL('./src/assets/logos/aurora_circuits.png?as=webp', import.meta.url),
         title: 'Computer Engineer Intern at Aurora Circuits',
         description: "Developed a self-configurable application that streamlines the PCB quoting process, eliminating the need for manual Excel sheets and increasing efficiency."
     }),
     new TimelineSection({
         startDate: new Date(2023, 4), endDate: new Date(2023, 7),
-        color: '#2D95E5', tooltip: 'Progressive Insurance', icon: './assets/logos/progressive.png',
+        color: '#2D95E5', tooltip: 'Progressive Insurance', icon: progIcon,
         title: 'Software Developer Intern at Progressive Insurance',
         description: "Developed scalable solutions with Python, and expanded skills in Docker, Terraform, and OpenStack. Contributed to a dynamic team, driving innovation and business growth through cutting-edge technologies."
     }),
     new TimelineSection({
         startDate: new Date(2024, 5), endDate: null,
-        color: '#2D95E5', tooltip: 'Progressive Insurance', icon: './assets/logos/progressive.png',
+        color: '#2D95E5', tooltip: 'Progressive Insurance', icon: progIcon,
         title: 'Apps Programmer Associate at Progressive Insurance',
         description: "Enhanced OpenShift cluster operations with Python scripting, driving automation and efficiency to elevate customer experience. Expanded skills in Docker, Kubernetes, and Terraform to optimize cloud-native infrastructure and deliver innovative solutions."
     }),
@@ -147,53 +161,123 @@ const l_typescript = new PLanguage("TypeScript", "#3178c6");
 const l_dockerfile = new PLanguage("Dockerfile", "#384d54");
 
 // Projects
-const all_projects = [
-    new Project("Internal Package Registry", "project-1.png", "./projects/acmeir.html",
-        [t_aws, t_agile, t_scrum, t_rest_api, t_cli], [[l_rust, 37.0], [l_dart, 32.7], [l_python, 26.6], [l_shell, 2.4], [l_other, 1.3]],
-        "Built an internal package registry using Rust, Dart, and Python, leveraging AWS and Agile methodologies, to create a scalable and efficient package management system."),
-    new Project("Procedural Terrain", "project-2.png", "./projects/proceduralplanet.html",
-        [t_opengl, t_freeglut, t_raymarching, t_sdf, t_perlin, t_phong], [[l_cpp, 84.6], [l_c, 13.6], [l_glsl, 1.7], [l_other, 0.1]],
-        "Created a procedural terrain generator using C++, OpenGL, and GLSL, incorporating techniques such as raymarching, SDF, Perlin noise, and Phong shading. This project demonstrated my understanding of computer graphics and procedural generation techniques."),
-    new Project("Cloud-Enabled Fingerprint Scanner", "project-3.png", "./projects/fingerprint_scanner.html",
-        [t_aws, t_esp32, t_espidf, t_rest_api, t_pcb, t_embedded, t_spi, t_uart, t_wifi], [[l_c, 99.9], [l_other, 0.1]],
-        "Developed a cloud-enabled fingerprint scanner using ESP32, AWS, and REST API, showcasing my ability to create secure and efficient biometric authentication systems with microcontrollers and cloud-based technologies."),
-    new Project("Cloud-Enabled TaskApp", "project-4.png", "https://github.com/svparekh/TaskApp",
-        [t_firebase, t_firestore, t_flutter, t_gcpstorage], [[l_dart, 80.0], [l_cpp, 9.8], [l_cmake, 8.0], [l_c, 0.6]],
-        "Developed a cloud-enabled task management application using Flutter, Firebase, and Firestore, with a focus on scalable and efficient data storage and retrieval. This project demonstrated my ability to work with cloud-based technologies and mobile app development frameworks."),
-    new Project("This Website", "project-5.png", "https://github.com/svparekh/svparekh.github.io",
-        [t_html, t_css, t_js], [[l_css, 44.9], [l_js, 34.1], [l_hmtl, 21.0]],
-        "Designed and developed this personal website using HTML, CSS, and JavaScript, with a focus on responsive design and user experience. This project showcased my ability to work with front-end web development technologies and create a visually appealing and functional website."),
-    new Project("Flutter Package: SMenus", "project-6.png", "https://pub.dev/packages/flutter_smenus",
-        [t_flutter, t_package], [[l_dart, 100.0]],
-        "Created a Flutter package for customizable menus, using Dart programming language. This project demonstrated my ability to work with Flutter and create reusable UI components."),
-    new Project("Client Quote Generator", "project-7.png", "./projects/client_quote_generator.html",
-        [t_python, t_pyqt, t_regex], [[l_python, 80.0], [l_cpp, 20.0]],
-        "Developed a client quote generator using Python, PyQt, and regular expressions, with a focus on automating tasks and improving efficiency. This project showcased my ability to work with Python and create desktop applications."),
-    new Project("Trackify: An Issue Tracker", "trackify/trackify.png", "./projects/trackify.html",
-        [t_docker, t_docker_compose, t_containerized, t_api, t_secure, t_postgresql, t_angular], [[l_python, 70.0], [l_typescript, 24.5], [l_dockerfile, 4.2], [l_other, 1.3]],
-        "Built an issue tracking system with Docker, Docker Compose, and Angular, focusing on containerization, security, and scalability, showcasing my expertise in secure and scalable app development."),
-];
+const all_projects = {
+    "registry": new Project(
+        "Internal Package Registry",
+        {
+            img: new URL('./src/assets/projects/package-registry.png?as=webp', import.meta.url),
+            // url: new URL('./src/projects/package-registry.html?as=html', import.meta.url),
+            url: "./projects/package-registry",
+            tags: [t_aws, t_agile, t_scrum, t_rest_api, t_cli],
+            languages: [[l_rust, 37.0], [l_dart, 32.7], [l_python, 26.6], [l_shell, 2.4], [l_other, 1.3]],
+            description: "Built an internal package registry using Rust, Dart, and Python, leveraging AWS and Agile methodologies, to create a scalable and efficient package management system."
+        }
+    ),
+    "terrain": new Project(
+        "Procedural Terrain",
+        {
+            img: new URL('./src/assets/projects/procedural-planet.png?as=webp', import.meta.url),
+            url: "./projects/procedural-planet",
+            tags: [t_opengl, t_freeglut, t_raymarching, t_sdf, t_perlin, t_phong],
+            languages: [[l_cpp, 84.6], [l_c, 13.6], [l_glsl, 1.7], [l_other, 0.1]],
+            description: "Created a procedural terrain generator using C++, OpenGL, and GLSL, incorporating techniques such as raymarching, SDF, Perlin noise, and Phong shading. This project demonstrated my understanding of computer graphics and procedural generation techniques."
+        }
+    ),
+    "scanner": new Project(
+        "Cloud-Enabled Fingerprint Scanner",
+        {
+            img: new URL('./src/assets/projects/fingerprint-scanner.png?as=webp', import.meta.url),
+            url: "./projects/fingerprint-scanner",
+            tags: [t_aws, t_esp32, t_espidf, t_rest_api, t_pcb, t_embedded, t_spi, t_uart, t_wifi],
+            languages: [[l_c, 99.9], [l_other, 0.1]],
+            description: "Developed a cloud-enabled fingerprint scanner using ESP32, AWS, and REST API, showcasing my ability to create secure and efficient biometric authentication systems with microcontrollers and cloud-based technologies."
+        }
+    ),
+    "taskapp": new Project(
+        "Cloud-Enabled TaskApp",
+        {
+            img: new URL('./src/assets/projects/task-app.png?as=webp', import.meta.url),
+            url: "https://github.com/svparekh/TaskApp",
+            tags: [t_firebase, t_firestore, t_flutter, t_gcpstorage],
+            languages: [[l_dart, 80.0], [l_cpp, 9.8], [l_cmake, 8.0], [l_c, 0.6]],
+            description: "Developed a cloud-enabled task management application using Flutter, Firebase, and Firestore, with a focus on scalable and efficient data storage and retrieval. This project demonstrated my ability to work with cloud-based technologies and mobile app development frameworks."
+        }
+    ),
+    "portfolio": new Project(
+        "This Website",
+        {
+            img: new URL('./src/assets/projects/my-portfolio.png?as=webp', import.meta.url),
+            url: "https://github.com/svparekh/svparekh.github.io",
+            tags: [t_html, t_css, t_js],
+            languages: [[l_css, 44.9], [l_js, 34.1], [l_hmtl, 21.0]],
+            description: "Designed and developed this personal website using HTML, CSS, and JavaScript, with a focus on responsive design and user experience. This project showcased my ability to work with front-end web development technologies and create a visually appealing and functional website."
+        }
+    ),
+    "smenus": new Project(
+        "Flutter Package: SMenus",
+        {
+            img: new URL('./src/assets/projects/flutter-smenus.png?as=webp', import.meta.url),
+            url: "https://pub.dev/packages/flutter_smenus",
+            tags: [t_flutter, t_package],
+            languages: [[l_dart, 100.0]],
+            description: "Created a Flutter package for customizable menus, using Dart programming language. This project demonstrated my ability to work with Flutter and create reusable UI components."
+        }
+    ),
+    "quotegen": new Project(
+        "Client Quote Generator",
+        {
+            img: new URL('./src/assets/projects/quote-generator.png?as=webp', import.meta.url),
+            url: "./projects/quote-generator",
+            tags: [t_python, t_pyqt, t_regex],
+            languages: [[l_python, 80.0], [l_cpp, 20.0]],
+            description: "Developed a client quote generator using Python, PyQt, and regular expressions, with a focus on automating tasks and improving efficiency. This project showcased my ability to work with Python and create desktop applications."
+        }
+    ),
+    "trackify": new Project(
+        "Trackify: An Issue Tracker",
+        {
+            img: new URL('./src/assets/projects/trackify.png?as=webp', import.meta.url),
+            url: "./projects/trackify",
+            tags: [t_docker, t_docker_compose, t_containerized, t_api, t_secure, t_postgresql, t_angular],
+            languages: [[l_python, 70.0], [l_typescript, 24.5], [l_dockerfile, 4.2], [l_other, 1.3]],
+            description: "Built an issue tracking system with Docker, Docker Compose, and Angular, focusing on containerization, security, and scalability, showcasing my expertise in secure and scalable app development."
+        }
+    ),
+    "shorturl": new Project(
+        "shortUrl",
+        {
+            img: new URL('./src/assets/projects/shorturl.png?as=webp', import.meta.url),
+            url: "./projects/shorturl",
+            tags: [t_docker, t_docker_compose, t_containerized, t_api, t_secure, t_postgresql, t_angular],
+            languages: [[l_js, 80.0], [l_css, 19.8], [l_hmtl, 0.2]],
+            description: "A ground-up implementation of a URL shortener and QR code generator with customizable features, expiration dates, and login functionality."
+        }
+    ),
+};
 
 const projects = [
-    all_projects[1],
-    all_projects[0],
-    all_projects[7],
-    all_projects[2],
-    // all_projects[3],
-    // all_projects[4],
-    all_projects[5],
-    all_projects[6],
+    all_projects['terrain'],
+    all_projects['shorturl'],
+    all_projects['trackify'],
+    all_projects['registry'],
+    all_projects['scanner'],
+    // all_projects['taskapp'],
+    // all_projects['portfolio'],
+    all_projects['smenus'],
+    all_projects['quotegen'],
 ];
 
 
-createPopupSideMenuLinks();
-createSideMenuBars();
+// Setup
+createPopupSideMenuLinksForPortfolio();
+createSideMenuBarsForPortfolio();
 runTextMorphScript();
 generateSkills(skills);
 generateTimeline(timelineSections);
-generateProjects();
+generateProjects(projects);
 
 
+// Event Listeners
 const skillPopup = document.getElementById('skill-popup');
 skillPopup.addEventListener('click', () => {
     const skillPopupCard = document.getElementById('skill-popup-card');
@@ -207,8 +291,9 @@ skillPopup.addEventListener('click', () => {
     }, 100);
 });
 
-
+// Swiper
 const skill_swiper = new Swiper('.skill-swiper', {
+    modules: [Pagination, Autoplay, FreeMode],
     loop: true,
     loopAdditionalSlides: skills.length,
     freeMode: {
@@ -218,9 +303,7 @@ const skill_swiper = new Swiper('.skill-swiper', {
     freeModeMomentum: true,
     grabCursor: true,
     centeredSlides: true,
-    navigation: false,
-    spaceBetween: 0,
-
+    spaceBetween: -10,
     autoplay: {
         enabled: true,
         delay: -1,
@@ -257,6 +340,7 @@ const skill_swiper = new Swiper('.skill-swiper', {
 });
 
 const project_swiper = new Swiper('.project-swiper', {
+    modules: [Navigation, Pagination],
     loop: false,
     grabCursor: true,
     centeredSlides: true,
@@ -284,7 +368,7 @@ const project_swiper = new Swiper('.project-swiper', {
         1600: {
             slidesPerView: 3,
         },
-        2000: {
+        2100: {
             slidesPerView: 4,
         }
     },

@@ -1,0 +1,366 @@
+/* ###### */
+/* Global */
+/* ###### */
+
+h1 {
+    color: var(--c-primary);
+    text-align: center;
+    font-size: 60pt;
+    font-family: 'PP Eiko';
+}
+
+h2 {
+    color: var(--c-primary);
+    text-align: center;
+    font-size: 40pt;
+    font-family: 'PP Eiko';
+}
+
+h3 {
+    color: var(--c-primary);
+    text-align: center;
+    font-size: 30pt;
+    font-family: 'PP Eiko';
+}
+
+p {
+    color: var(--c-primary);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--c-secondary);
+    background-image: url('../assets/background.jpg');
+    background-repeat: repeat;
+    background-size: 5em;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--c-primary);
+    text-decoration: none;
+    transition: all 300ms ease 0s;
+}
+
+a:hover {
+    color: var(--c-active-primary);
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: var(--c-active-primary);
+}
+
+.title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 25px;
+}
+
+.gray-text {
+    color: var(--c-primary);
+    text-align: center;
+}
+
+.max-width-1600 {
+    max-width: 1600px;
+}
+
+.max-width-1000 {
+    max-width: 1000px;
+}
+
+.max-width-800 {
+    max-width: 800px;
+}
+
+.max-width-600 {
+    max-width: 600px;
+}
+
+.max-width-400 {
+    max-width: 400px;
+}
+
+.svg-endcap-left {
+    width: 150px;
+    transform: rotate(180deg);
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+.svg-endcap-right {
+    width: 150px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+.svg-large-scribble {
+    width: 400px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+.svg-divider {
+    width: 150px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+.horizontal-line {
+    height: 3px;
+    width: 100px;
+    background-color: var(--c-primary);
+    border-radius: 6px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+.vertical-line {
+    height: 150px;
+    width: 4px;
+    background-color: var(--c-primary);
+    border-radius: 99px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+/* Icons (small icons) */
+.icon {
+    height: 2rem;
+    color: var(--c-primary);
+}
+
+.details-container-row {
+    padding: 1.5rem;
+    flex: 1;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+/* ################# */
+/* Navigations Menus */
+/* ################# */
+nav {
+    display: flex;
+    /* height: 17vh; */
+}
+
+/* Big nav menu */
+#full-nav-menu {
+    overflow: hidden;
+    z-index: 998;
+    height: 10vh;
+    align-items: left;
+}
+
+
+/* Small nav menu */
+#mini-nav-menu {
+    display: none;
+    justify-content: space-between;
+    padding: 0 2em;
+    height: 10vh;
+    align-items: center;
+}
+
+.mini-nav-menu {
+
+    position: relative;
+    display: inline-block;
+}
+
+.mini-nav-menu-icon-container {
+    cursor: pointer;
+}
+
+.mini-nav-menu-icon {
+    /* The size of the SVG defines the overall size */
+    height: 3em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mini-nav-menu-icon-line {
+    fill: none;
+    stroke: var(--c-primary);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1;
+    /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mini-nav-menu-icon-line-style1 {
+    stroke-dasharray: 12 63;
+}
+
+.mini-nav-menu-icon.open {
+    transform: rotate(-45deg);
+}
+
+.mini-nav-menu-icon.open .mini-nav-menu-icon-line-style1 {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+.mini-nav-menu-items {
+    position: absolute;
+    top: 8vh;
+    right: 2em;
+    background-color: var(--c-secondary);
+    width: -moz-fit-content;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: all 300ms ease 0s;
+    z-index: 999;
+}
+
+.mini-nav-menu-items a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    /* text-decoration: none; */
+    transition: all 300ms ease 0s;
+}
+
+.mini-nav-menu-items li {
+    list-style: none;
+}
+
+/* 'open' is a class added by js, when hamburger menu is open */
+.mini-nav-menu-items.open {
+    max-height: 300px;
+    padding: 1rem;
+}
+
+#footer-nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-nav-menu-items {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+/* #### */
+/* Logo */
+/* #### */
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: last baseline;
+    align-content: left;
+    margin: 0;
+    margin-left: 8%;
+}
+
+.logo {
+    display: flex;
+    align-content: center;
+    font-size: 2rem;
+}
+
+.logo p {
+    margin-left: 20px;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.logo-svg-sparkle {
+    width: 25px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+/* ############### */
+/* Section General */
+/* ############### */
+section {
+    padding-top: 4vh;
+    /* min-height: 96vh; */
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+}
+
+.profile-pic {
+    /* width: min(40vh, 29vw); */
+    height: min(40vh, 29vw);
+}
+
+.section__pic-container {
+    display: flex;
+    /* height: 550px; */
+    /* width: 600px; */
+    margin: auto 1vw auto 0;
+    width: auto;
+    height: min(40vh, 29vw);
+    justify-content: center;
+}
+
+.section__text {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: auto 7vw auto 8vw;
+    padding-bottom: 3vh;
+}
+
+.section__text p {
+    font-weight: 600;
+}
+
+.section__text__p2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.title-container {
+    overflow: hidden;
+}
+
+.title-container h1,
+h2 {
+    transform: translateY(100%);
+    transition: all 300ms ease 0s;
+}
+
+.title-container h1.in-view,
+h2.in-view {
+    transform: translateY(0);
+}

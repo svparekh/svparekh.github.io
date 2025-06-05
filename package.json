@@ -1,5 +1,22 @@
 {
+  "name": "portfolio",
+  "version": "1.0.0",
+  "homepage": "https://www.setulp.com",
+  "type": "module",
+  "author": "Setul Parekh",
+  "license": "ISC",
+  "description": "Setul Parekh's Portfolio",
+  "scripts": {
+    "dev": "vite build && vite preview",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
+    "highlight.js": "^11.11.1",
+    "showdown": "^2.1.0",
     "swiper": "^11.1.14"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
   }
 }

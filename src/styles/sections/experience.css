@@ -1,0 +1,511 @@
+/* ########################### */
+/* Experience Section Specific */
+/* ########################### */
+#experience {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 97vh;
+    height: auto;
+    align-items: center;
+}
+
+.experience-subtitle {
+    color: var(--c-primary);
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.experience-details-container {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: row; */
+}
+
+.skill-swiper {
+    --mask: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    max-width: 75%;
+    padding: 3rem 0 !important;
+}
+
+#skills-container {
+    padding: 1.5rem;
+    align-items: center;
+    display: flex;
+    /* gap: 2rem; */
+    flex-direction: row;
+}
+
+#skill-popup {
+    position: fixed;
+    left: 0%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 101;
+    background-color: rgba(0, 0, 0, 0.29);
+    transition: all 150ms ease 0s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+#skill-popup-card {
+    /* 63:88 ratio */
+    width: 21.48rem;
+    height: 30rem;
+
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 500ms ease 0s;
+}
+
+#skill-popup-card:hover {
+    transform: rotateY(180deg);
+}
+
+#skill-popup-card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: var(--c-secondary);
+    border-radius: 2rem;
+}
+
+#skill-popup-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: var(--c-secondary);
+    transform: rotateY(180deg);
+    border-radius: 2rem;
+    /* border: #363636 1px solid; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#svg-skill-popup-card-icon-top {
+    margin: 1rem 1.5rem 0 1.25rem;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+#svg-skill-popup-card-icon-bottom {
+    margin: 0 1.25rem 0.75rem 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    transform: scaleY(-1);
+}
+
+
+.skill-popup-card-back-top {
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.skill-popup-card-back-bottom {
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.skill-popup-card-back-content {
+    margin: auto;
+}
+
+.skill-popup-card-experience {
+    text-align: center;
+}
+
+.skill-popup-card-experience-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-popup-card-horizontal-line {
+    height: 3px;
+    width: 25px;
+    background-color: var(--c-primary);
+    border-radius: 6px;
+}
+
+.svg-skill-popup-card-divider {
+    width: 10rem;
+}
+
+#skill-popup-card-description {
+    margin: 0 2.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.skill-tags-container {
+    text-align: initial;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    justify-content: space-evenly;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 1.5rem 1.5rem;
+}
+
+/* ##################### Timeline ################# */
+.timeline-container {
+    position: relative;
+    /* max-width: 900px; */
+    margin: 5rem auto 0 auto;
+    padding: 50px 0;
+    width: 75%;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-line {
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    border: 1px dashed var(--c-primary);
+    top: 50%;
+    z-index: -5;
+    /* Place line behind dots */
+    --mask: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+
+.timeline-data-container {
+    position: relative;
+    /* max-width: 900px; */
+    margin: auto;
+    /* padding-top: 50px; */
+    width: 90%;
+}
+
+.timeline-section {
+    position: absolute;
+    top: -4px;
+    height: 10px;
+    transition: all 300ms ease 0s;
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+.active-section {
+    opacity: 1;
+}
+
+.timeline-tooltip {
+    position: absolute;
+    background-color: var(--c-primary);
+    color: var(--c-text-light);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 12pt;
+    opacity: 0;
+    word-wrap: nowrap;
+    text-wrap: nowrap;
+}
+
+.timeline-point {
+    position: absolute;
+    display: inline-block;
+    margin-right: -10px;
+}
+
+.timeline-point-line {
+    position: absolute;
+    display: inline-block;
+    /* margin-right: -4px; */
+    width: 0px;
+    height: 50px;
+    border-left: 1px solid var(--c-primary);
+    border-radius: 99px;
+    top: -25px;
+    /* left: calc(50% + 1.5px); */
+    z-index: -4;
+    /* Place line behind dots */
+}
+
+.timeline-point-line-small {
+    position: absolute;
+    display: inline-block;
+    margin-right: -4px;
+    width: 0px;
+    height: 30px;
+    border-left: 1px solid var(--c-primary);
+    border-radius: 99px;
+    top: -28px;
+    left: calc(50% + 1.5px);
+    z-index: -4;
+    /* Place line behind dots */
+}
+
+.timeline-dot-large {
+    --size: 12px;
+    position: absolute;
+    display: inline-block;
+    /* margin-right: -4px; */
+    /* To compensate for border */
+    height: var(--size);
+    width: var(--size);
+    transform: rotate(45deg);
+    background-color: var(--c-secondary);
+    border: 1px solid var(--c-active-primary);
+    top: calc(-1 * var(--size) / 2);
+    left: calc(-1 * var(--size) / 2);
+    z-index: 2;
+    /* Half of height to align center with line */
+}
+
+.timeline-dot-small {
+    position: relative;
+    display: inline-block;
+    margin-right: -4px;
+    /* To compensate for border */
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--c-secondary);
+    border: 1px solid var(--c-active-primary);
+    top: -22px;
+    /* Half of height to align center with line */
+}
+
+.timeline-label {
+    position: absolute;
+    /* Distance from bottom of dot to top of label */
+    left: 50%;
+    width: auto;
+    /* Center align label with dot */
+    transform: translateX(-50%);
+    font-size: 12pt;
+    /* text-wrap: nowrap; */
+    text-align: center;
+    /* More precise center alignment considering label width */
+}
+
+/* Arrow section */
+.timeline-arrow-container {
+    position: relative;
+    /* max-width: 900px; */
+    margin: 0 auto 0 auto;
+    padding: 120px 0 75px 0;
+    width: 67.5%;
+    display: flex;
+    align-items: center;
+}
+
+.svg-timeline-arrow {
+    width: 200px;
+    height: 200px;
+    transition: all 300ms ease 0s;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+    transform: translateY(150%);
+}
+
+.svg-timeline-arrow-container {
+    position: absolute;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.active-arrow {
+    transform: translateY(0);
+}
+
+/* Information section */
+.timeline-info-container {
+    margin: 0 auto auto auto;
+    padding-top: 2rem;
+}
+
+.timeline-info-row {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    gap: 1rem;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: space-between;
+    max-width: 750px;
+    margin: 0 0 0 25px;
+}
+
+.timeline-info-logo {
+    width: 200px;
+    padding: 25px;
+    transform: translateX(0);
+    transition: all 300ms ease 0s;
+}
+
+.timeline-info-row-divider {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 200px;
+    gap: 1rem;
+    align-items: center;
+    align-content: center;
+}
+
+.timeline-info-text-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(0);
+    transition: all 300ms ease 0s;
+    margin-right: 25px;
+}
+
+.timeline-info-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.timeline-info-description {
+    text-align: center;
+}
+
+.timeline-info-row-divider-vertical-line {
+    height: 100px;
+    width: 4px;
+    background-color: var(--c-primary);
+    border-radius: 99px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+.svg-timeline-info-star {
+    width: 20px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+.svg-timeline-info-sparkle {
+    width: 20px;
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
+}
+
+
+@media screen and (max-width: 600px) {
+    .timeline-info-row {
+        flex-direction: column;
+    }
+
+    .timeline-info-row-divider {
+        flex-direction: row;
+        width: 250px;
+        height: auto;
+        display: none;
+    }
+
+    .timeline-info-row-divider-vertical-line {
+        height: 3px;
+        width: 150px;
+    }
+
+    .svg-timeline-arrow,
+    .svg-timeline-arrow-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .timeline-info-top-border {
+        display: none;
+    }
+
+    .experience-subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #experience-container {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    #experience,
+    .experience-details-container {
+        margin-top: 2rem;
+    }
+
+    .skill-swiper {
+        max-width: 90%;
+    }
+
+    .skill-name-text {
+        opacity: 1 !important;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .timeline-container {
+        width: 90%;
+    }
+
+    .timeline-arrow-container {
+        width: 81%;
+    }
+}
+
+@media screen and (max-height: 1200px) {
+    #experience {
+        margin-bottom: 6rem;
+    }
+}

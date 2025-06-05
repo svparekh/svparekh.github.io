@@ -7,42 +7,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setul Parekh</title>
 
-  <!-- Swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <!-- <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css" />
-  <script src="node_modules/swiper/swiper-bundle.min.js"></script> -->
+  <script type="module">
+    import 'swiper/swiper-bundle.css';
+  </script>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/buttons.css">
-  <link rel="stylesheet" href="styles/index.css">
-  <link rel="stylesheet" href="styles/transitions.css">
+  <link rel="stylesheet" href="./src/styles/main.css">
+  <link rel="stylesheet" href="./src/styles/buttons.css">
+  <link rel="stylesheet" href="./src/styles/index.css">
+  <link rel="stylesheet" href="./src/styles/transitions.css">
 
-  <link rel="stylesheet" href="styles/sections/profile.css">
-  <link rel="stylesheet" href="styles/sections/about.css">
-  <link rel="stylesheet" href="styles/sections/experience.css">
-  <link rel="stylesheet" href="styles/sections/projects.css">
-  <link rel="stylesheet" href="styles/sections/contact.css">
+  <link rel="stylesheet" href="./src/styles/sections/profile.css">
+  <link rel="stylesheet" href="./src/styles/sections/about.css">
+  <link rel="stylesheet" href="./src/styles/sections/experience.css">
+  <link rel="stylesheet" href="./src/styles/sections/projects.css">
+  <link rel="stylesheet" href="./src/styles/sections/contact.css">
 
-  <link rel="stylesheet" href="styles/index_mediaqueries.css">
+  <link rel="stylesheet" href="./src/styles/index_mediaqueries.css">
 
   <!-- favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
-  <link rel="manifest" href="./site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+  <link rel="icon" href="./favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
 
   <!-- Scripts -->
-  <script src="scripts/script_index.js"></script>
-  <script src="scripts/transition.js"></script>
-  <script src="scripts/skills_slider.js"></script>
-  <script src="scripts/experience_timeline.js"></script>
-  <script src="scripts/gen_projects.js"></script>
-  <script src="scripts/open_animations.js"></script>
-
-  <script src="components/project_code_breakdown.js"></script>
-  <script src="components/project_tag.js"></script>
+  <script type="module" src="./src/scripts/script_index.js"></script>
+  <script type="module" src="./src/scripts/transition.js"></script>
+  <script type="module" src="./src/scripts/open_animations.js"></script>
+  <script type="module" src="./src/components/project_code_breakdown.js"></script>
+  <script type="module" src="./src/components/project_tag.js"></script>
 
 </head>
 
@@ -56,7 +51,7 @@
       <div id="skill-popup-card-front"></div>
       <div id="skill-popup-card-back">
         <div class="skill-popup-card-back-top">
-          <img src="./assets/logos/python.png" id="svg-skill-popup-card-icon-top" alt="Skill Icon"></img>
+          <img src="./src/assets/logos/python.png" id="svg-skill-popup-card-icon-top" alt="Skill Icon"></img>
         </div>
         <div class="skill-popup-card-back-content">
           <h2 id="skill-popup-card-title" class="no-animate-on-view">Title</h2>
@@ -65,11 +60,11 @@
             <p id="skill-popup-card-experience">Experience</p>
             <span class="skill-popup-card-horizontal-line"></span>
           </div>
-          <img src="./assets/svg_scribbles/divider.svg" class="svg-skill-popup-card-divider" alt="Divider"></img>
+          <img src="./src/assets/svg_scribbles/divider.svg" class="svg-skill-popup-card-divider" alt="Divider"></img>
           <p id="skill-popup-card-description">Description</p>
         </div>
         <div class="skill-popup-card-back-bottom">
-          <img src="./assets/logos/python.png" id="svg-skill-popup-card-icon-bottom" alt="Skill Icon"></img>
+          <img src="./src/assets/logos/python.png" id="svg-skill-popup-card-icon-bottom" alt="Skill Icon"></img>
         </div>
       </div>
     </div>
@@ -79,7 +74,7 @@
   <nav id="full-nav-menu">
     <div class="logo-container">
       <div class="logo" onclick="location.href='./#'">
-        <img src="./assets/svg_scribbles/sparkle.svg" class="logo-svg-sparkle" alt="Sparkle"></img>
+        <img src="./src/assets/svg_scribbles/sparkle.svg" class="logo-svg-sparkle" alt="Sparkle"></img>
         <p>Setul Parekh</p>
       </div>
     </div>
@@ -93,9 +88,9 @@
   </nav>
   <!-- Hamburger menu -->
   <nav id="mini-nav-menu">
-    <div class="logo-container" style="margin: 0;">
+    <div class="logo-container">
       <div class="logo" onclick="location.href='./#'">
-        <img src="./assets/svg_scribbles/sparkle.svg" class="logo-svg-sparkle" alt="Sparkle"></img>
+        <img src="./src/assets/svg_scribbles/sparkle.svg" class="logo-svg-sparkle" alt="Sparkle"></img>
         <p>Setul Parekh</p>
       </div>
     </div>
@@ -122,27 +117,26 @@
   <!-- profile section -->
   <section id="profile">
     <!-- Decorations -->
-    <img src="./assets/svg_scribbles/squiggle.svg" class="svg-squiggle" alt="Squiggle"></img>
-    <img src="./assets/svg_scribbles/arrow.svg" class="svg-arrow" alt="Arrow to menu"></img>
-    <img src="./assets/svg_scribbles/scribble.svg" class="svg-scribble" alt="Scribble"></img>
+    <img src="./src/assets/svg_scribbles/squiggle.svg" class="svg-squiggle" alt="Squiggle"></img>
+    <img src="./src/assets/svg_scribbles/arrow.svg" class="svg-arrow" alt="Arrow to menu"></img>
+    <img src="./src/assets/svg_scribbles/scribble.svg" class="svg-scribble" alt="Scribble"></img>
 
     <!-- Socials -->
     <div id="socials-container">
-      <img src="./assets/linkedin_logo.png" alt="LinkedIn Profile link" class="icon"
+      <img src="./src/assets/linkedin_logo.png" alt="LinkedIn Profile link" class="icon"
         onclick="location.href='https://www.linkedin.com/in/setul-parekh/'">
-      <img src="./assets/github_logo.png" alt="GitHub Profile link" class="icon"
+      <img src="./src/assets/github_logo.png" alt="GitHub Profile link" class="icon"
         onclick="location.href='https://github.com/svparekh'">
     </div>
 
     <div class="section__pic-container">
-      <!-- !!!!!!!!!!!!!!!!! UNUSED CLASS: profile-pic !!!!!!!!!!!!!!!!! -->
-      <img src="./assets/headshot_circled.png" alt="Setul's Profile Photo" class="profile-pic animate-on-view">
+      <img src="./src/assets/headshot_circled.png" alt="Setul's Profile Photo" class="profile-pic animate-on-view">
     </div>
 
     <div id="socials-container-below">
-      <img src="./assets/linkedin_logo.png" alt="LinkedIn Profile link" class="icon"
+      <img src="./src/assets/linkedin_logo.png" alt="LinkedIn Profile link" class="icon"
         onclick="location.href='https://www.linkedin.com/in/setul-parekh/'">
-      <img src="./assets/github_logo.png" alt="GitHub Profile link" class="icon"
+      <img src="./src/assets/github_logo.png" alt="GitHub Profile link" class="icon"
         onclick="location.href='https://github.com/svparekh'">
     </div>
 
@@ -176,14 +170,14 @@
       <!-- Action buttons -->
       <div class="profile-btn-spacer">
         <div class="btn-container">
-          <button class="btn btn-style3" onclick="window.open('./assets/setul_parekh_resume.pdf')">Resume</button>
-          <button class="btn btn-style3" onclick="location.href='./#contact'">Lets Work Together!</button>
+          <button type="button" class="btn btn-style3" onclick="window.open('/setul_parekh_resume.pdf')">Resume</button>
+          <button type="button" class="btn btn-style3" onclick="location.href='./#contact'">Lets Work Together!</button>
         </div>
       </div>
     </div>
 
     <div class="mouse-scroll-icon-container" onclick="location.href='#about'">
-      <img src="./assets/mouse_scroll.png" alt="Scroll down icon" class="profile-scroll-icon">
+      <img src="./src/assets/mouse_scroll.png" alt="Scroll down icon" class="profile-scroll-icon">
     </div>
   </section>
 
@@ -192,32 +186,32 @@
     <div class="about-title-container">
 
       <div class="title-container">
-        <img src="./assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-left">
+        <img src="./src/assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-left">
         <h1 class="animate-on-view">About.</h1>
-        <img src="./assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-right">
+        <img src="./src/assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-right">
       </div>
-      <img src="./assets/svg_scribbles/large_scribble.svg" alt="Large scribble" class="svg-large-scribble">
+      <img src="./src/assets/svg_scribbles/large_scribble.svg" alt="Large scribble" class="svg-large-scribble">
 
-      <div class="about-containers" style="margin-top: 2rem;">
-        <div style="overflow: hidden;  flex: 1;">
+      <div class="about-containers">
+        <div class="about-container-detail-column">
           <div class="details-container-col animate-on-view">
-            <img src="./assets/experience.png" alt="Experience icon" class="icon">
+            <img src="./src/assets/experience.png" alt="Experience icon" class="icon">
             <h4>Experience</h4>
             <p class="gray-text">2+ years <br />Backend Development</p>
           </div>
         </div>
 
         <span class="vertical-line"></span>
-        <div style="overflow: hidden; flex: 1;">
+        <div class="about-container-detail-column">
           <div class="details-container-col animate-on-view">
-            <img src="./assets/education.png" alt="Education icon" class="icon">
+            <img src="./src/assets/education.png" alt="Education icon" class="icon">
             <h4>Education</h4>
             <p class="gray-text">B.Sc Computer Engineering</p>
           </div>
         </div>
       </div>
       <!--   \/ Width needs to be the same as about-containers -->
-      <img src="./assets/svg_scribbles/divider.svg" alt="Divider" class="svg-divider">
+      <img src="./src/assets/svg_scribbles/divider.svg" alt="Divider" class="svg-divider">
 
     </div>
 
@@ -240,7 +234,7 @@
         </p>
       </div>
       <div class="about-bottom-container">
-        <img src="./assets/svg_scribbles/line2.svg" class="svg-bottom-divider" alt="Sparkle"></img>
+        <img src="./src/assets/svg_scribbles/line2.svg" class="svg-bottom-divider" alt="Sparkle"></img>
       </div>
 
     </div>
@@ -250,9 +244,9 @@
   <section id="experience">
     <!-- skills -->
     <div class="title-container">
-      <img src="./assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-left">
+      <img src="./src/assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-left">
       <h2 class="animate-on-view">Skills.</h2>
-      <img src="./assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-right">
+      <img src="./src/assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-right">
     </div>
 
     <div class="swiper skill-swiper">
@@ -261,9 +255,9 @@
 
     <!-- experience timeline -->
     <div class="title-container">
-      <img src="./assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-left">
+      <img src="./src/assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-left">
       <h2 class="animate-on-view">Experience.</h2>
-      <img src="./assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-right">
+      <img src="./src/assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-right">
     </div>
 
     <div class="timeline-container">
@@ -275,20 +269,19 @@
 
     <div class="timeline-info-container">
       <div class="timeline-info-top-border">
-        <img src="./assets/svg_scribbles/long_line.svg" class="svg-bottom-divider" alt="Sparkle"></img>
+        <img src="./src/assets/svg_scribbles/long_line.svg" class="svg-bottom-divider" alt="Sparkle"></img>
       </div>
       <div class="timeline-info-row">
-        <img class="timeline-info-logo" src="./assets//education.png" alt="Experience Section Logo"></img>
+        <img class="timeline-info-logo" src="./src/assets//education.png" alt="Experience Section Logo"></img>
         <div class="timeline-info-row-divider">
-          <img src="./assets/svg_scribbles/star.svg" class="svg-timeline-info-star" alt="Star"></img>
+          <img src="./src/assets/svg_scribbles/star.svg" class="svg-timeline-info-star" alt="Star"></img>
           <span class="timeline-info-row-divider-vertical-line"></span>
         </div>
         <div class="timeline-info-text-container">
           <p class="timeline-info-title">Title</p>
           <p class="timeline-info-description">Description</p>
         </div>
-        <img src="./assets/svg_scribbles/sparkle.svg" class="svg-timeline-info-sparkle" alt="Sparkle"
-          style="width: 20px; position: absolute; right: 0px; top: 5px;"></img>
+        <img src="./src/assets/svg_scribbles/sparkle.svg" class="svg-timeline-info-sparkle" alt="Sparkle"></img>
       </div>
     </div>
   </section>
@@ -296,14 +289,14 @@
   <!-- projects section -->
   <section id="projects">
     <!-- Decorations -->
-    <img src="./assets/svg_scribbles/squiggle.svg" class="svg-squiggle-project" alt="Squiggle"></img>
-    <img src="./assets/svg_scribbles/scribble2.svg" class="svg-scribble-project" alt="Scribble"></img>
+    <img src="./src/assets/svg_scribbles/squiggle.svg" class="svg-squiggle-project" alt="Squiggle"></img>
+    <img src="./src/assets/svg_scribbles/scribble2.svg" class="svg-scribble-project" alt="Scribble"></img>
 
     <!-- Title -->
     <div class="title-container">
-      <img src="./assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-left">
+      <img src="./src/assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-left">
       <h1 class="animate-on-view">Projects.</h1>
-      <img src="./assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-right">
+      <img src="./src/assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-right">
     </div>
 
     <!-- Projects -->
@@ -319,26 +312,26 @@
   <section id="contact">
     <div class="about-title-container">
       <div class="title-container">
-        <img src="./assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-left">
+        <img src="./src/assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-left">
         <h1 class="animate-on-view">Contact.</h1>
-        <img src="./assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-right">
+        <img src="./src/assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-right">
       </div>
-      <img src="./assets/svg_scribbles/large_scribble.svg" alt="Large scribble" class="svg-large-scribble">
+      <img src="./src/assets/svg_scribbles/large_scribble.svg" alt="Large scribble" class="svg-large-scribble">
     </div>
 
     <div class="contact-info-upper-container">
-      <!-- <img src="./assets/svg_scribbles/large_circle.svg" class="svg-contact-circle" alt="Large circle"> -->
+      <!-- <img src="./src/assets/svg_scribbles/large_circle.svg" class="svg-contact-circle" alt="Large circle"> -->
 
       <div class="contact-info-container">
-        <img src="./assets/linkedin_logo.png" alt="LinkedIn icon" class="icon contact-icon">
+        <img src="./src/assets/linkedin_logo.png" alt="LinkedIn icon" class="icon contact-icon">
         <p><a href="https://www.linkedin.com/in/setul-parekh/">LinkedIn</a></p>
       </div>
       <div class="contact-info-container">
-        <img src="./assets/github_logo.png" alt="GitHub icon" class="icon contact-icon">
+        <img src="./src/assets/github_logo.png" alt="GitHub icon" class="icon contact-icon">
         <p><a href="https://github.com/svparekh">GitHub</a></p>
       </div>
       <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon">
+        <img src="./src/assets/email.png" alt="Email icon" class="icon contact-icon">
         <p><a href="mailto:setulvp@gmail.com">setulvp@gmail.com</a></p>
       </div>
     </div>
@@ -347,7 +340,7 @@
 
   <footer id="footer">
     <nav id="footer-nav-menu">
-      <img src="./assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-left footer-endcaps">
+      <img src="./src/assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-left footer-endcaps">
       <ul class="footer-nav-menu-items">
         <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -355,7 +348,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <img src="./assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-right footer-endcaps">
+      <img src="./src/assets/svg_scribbles/end_cap.svg" alt="Endcap" class="svg-endcap-right footer-endcaps">
     </nav>
     <script>
       const footer = document.querySelector("#footer");
@@ -363,7 +356,7 @@
     </script>
   </footer>
 
-  <script src="main.js"></script>
+  <script type="module" src="main.js"></script>
 
 </body>
 

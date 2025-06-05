@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Trackify: An Issue Tracker</title>
+    <title>ACMEIR: A Trustworthy Internal Package Registry</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="../src/styles/main.css">
@@ -64,9 +64,9 @@
     <div class="container">
         <!-- Icon and title -->
         <div class="project-header">
-            <img class="project-icon" src="../src/assets/projects/trackify.png" alt="Project Icon">
-            <a href="https://github.com/Trackify-Issue-Tracker/Trackify" target="_blank" rel="noopener noreferrer"
-                class="btn-style3 project-github-button">
+            <img class="project-icon" src="../src/assets/projects/package-registry.png" alt="Project Icon">
+            <a class="btn-style3 project-github-button" href="https://github.com/ECE-461-Project-Nick-David-Setul-Chase"
+                target="_blank" rel="noopener noreferrer">
                 <div class="btn-w-img-txt">
                     <img class="github-icon" src="../src/assets/github_logo.png" alt="GitHub Icon">
                     View GitHub
@@ -78,32 +78,31 @@
         <div class="project-title"></div>
 
         <!-- Code Breakdown -->
-        <project-code-breakdown values="[70, 24.5, 4.2, 1.3]" names='["Python", "TypeScript", "Dockerfile", "Other"]'
-            colors='["#3572A5", "#3178c6", "#384d54", "#b1b1b1"]' size="large"></project-code-breakdown>
+        <project-code-breakdown values="[37, 32.7, 26.6, 2.4, 1.3]" names='["Rust", "Dart", "Python", "Shell", "Other"]'
+            colors='["#dea584", "#00B4AB", "#3572A5", "#89e051", "#b1b1b1"]' size="large"></project-code-breakdown>
 
         <!-- Tags -->
         <div class="project-tags-container">
-            <project-tag text="Docker" color="blue" size="large"></project-tag>
-            <project-tag text="Docker Compose" color="blue" size="large"></project-tag>
-            <project-tag text="Containerized" color="blue" size="large"></project-tag>
-            <project-tag text="API" color="magenta" size="large"></project-tag>
-            <project-tag text="Secure" color="magenta" size="large"></project-tag>
+            <project-tag text="DevOps" color="blue" size="large"></project-tag>
+            <project-tag text="CI/CD" color="blue" size="large"></project-tag>
+            <project-tag text="AWS" color="blue" size="large"></project-tag>
+            <project-tag text="GCP" color="blue" size="large"></project-tag>
+            <project-tag text="Agile" color="magenta" size="large"></project-tag>
+            <project-tag text="Scrum" color="magenta" size="large"></project-tag>
+            <project-tag text="REST" color="magenta" size="large"></project-tag>
+            <project-tag text="Rust" color="green" size="large"></project-tag>
             <project-tag text="Python" color="green" size="large"></project-tag>
-            <project-tag text="PostgreSQL" color="green" size="large"></project-tag>
-            <project-tag text="Angular" color="green" size="large"></project-tag>
         </div>
 
         <!-- Live Demo Link -->
-        <project-link url="https://trackify.setulp.com"></project-link>
+        <!-- <project-link url=""></project-link> -->
 
         <!-- README -->
         <div class="readme-container"></div>
     </div>
 
-
     <!-- Footer -->
     <footer id="footer"></footer>
-
 </body>
 
 <script type="module">
@@ -111,6 +110,8 @@
     import { createReadmeHtml, createSideMenuBarsForProject, createPopupSideMenuLinksForProject, scrollToTop } from '../src/scripts/script_project.js';
     import hljs from '/node_modules/highlight.js/lib/core.js';
     import bash from '/node_modules/highlight.js/lib/languages/bash.js';
+    import yaml from '/node_modules/highlight.js/lib/languages/yaml.js';
+    import python from '/node_modules/highlight.js/lib/languages/python.js';
     import '/node_modules/highlight.js/styles/atom-one-dark.css';
 
     // Set scroll to top as global
@@ -118,9 +119,11 @@
 
     // Register the languages needed
     hljs.registerLanguage('bash', bash);
+    hljs.registerLanguage('yaml', yaml);
+    hljs.registerLanguage('python', python);
 
     // Get Readme and make html of markdown, also add title
-    const apiUrl = "https://raw.githubusercontent.com/Trackify-Issue-Tracker/Trackify/main/README.md";
+    const apiUrl = "https://raw.githubusercontent.com/svparekh/Package-Registry-Project-ACMEIR/master/README.md";
     createReadmeHtml(apiUrl);
     createSideMenuBarsForProject();
     createPopupSideMenuLinksForProject();

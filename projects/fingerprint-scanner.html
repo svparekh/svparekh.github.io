@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Trackify: An Issue Tracker</title>
+    <title>Cloud Authenticated Fingerprint Scanner Door Lock</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="../src/styles/main.css">
@@ -64,9 +64,9 @@
     <div class="container">
         <!-- Icon and title -->
         <div class="project-header">
-            <img class="project-icon" src="../src/assets/projects/trackify.png" alt="Project Icon">
-            <a href="https://github.com/Trackify-Issue-Tracker/Trackify" target="_blank" rel="noopener noreferrer"
-                class="btn-style3 project-github-button">
+            <img class="project-icon" src="../src/assets/projects/fingerprint-scanner.png" alt="Project Icon">
+            <a class="btn-style3 project-github-button" href="https://github.com/Senior-Design-ECE-477/ESP32-S3-WROOM-1"
+                target="_blank" rel="noopener noreferrer">
                 <div class="btn-w-img-txt">
                     <img class="github-icon" src="../src/assets/github_logo.png" alt="GitHub Icon">
                     View GitHub
@@ -78,8 +78,8 @@
         <div class="project-title"></div>
 
         <!-- Code Breakdown -->
-        <project-code-breakdown values="[70, 24.5, 4.2, 1.3]" names='["Python", "TypeScript", "Dockerfile", "Other"]'
-            colors='["#3572A5", "#3178c6", "#384d54", "#b1b1b1"]' size="large"></project-code-breakdown>
+        <project-code-breakdown values="[30, 70]" names='["Python", "C++"]' colors='["#3572A5", "#f34b7d"]'
+            size="large"></project-code-breakdown>
 
         <!-- Tags -->
         <div class="project-tags-container">
@@ -94,7 +94,7 @@
         </div>
 
         <!-- Live Demo Link -->
-        <project-link url="https://trackify.setulp.com"></project-link>
+        <!-- <project-link url="https://issuetracker.setulparekh.com"></project-link> -->
 
         <!-- README -->
         <div class="readme-container"></div>
@@ -103,28 +103,21 @@
 
     <!-- Footer -->
     <footer id="footer"></footer>
-
 </body>
 
 <script type="module">
     // Imports
     import { createReadmeHtml, createSideMenuBarsForProject, createPopupSideMenuLinksForProject, scrollToTop } from '../src/scripts/script_project.js';
-    import hljs from '/node_modules/highlight.js/lib/core.js';
-    import bash from '/node_modules/highlight.js/lib/languages/bash.js';
-    import '/node_modules/highlight.js/styles/atom-one-dark.css';
 
     // Set scroll to top as global
     window.scrollToTop = scrollToTop;
 
-    // Register the languages needed
-    hljs.registerLanguage('bash', bash);
-
     // Get Readme and make html of markdown, also add title
-    const apiUrl = "https://raw.githubusercontent.com/Trackify-Issue-Tracker/Trackify/main/README.md";
+    const apiUrl = "https://raw.githubusercontent.com/svparekh/CAFS-ESP32/main/README.md";
     createReadmeHtml(apiUrl);
     createSideMenuBarsForProject();
     createPopupSideMenuLinksForProject();
-    hljs.highlightAll();
+
 
     // Set footer
     const footer = document.querySelector("#footer");

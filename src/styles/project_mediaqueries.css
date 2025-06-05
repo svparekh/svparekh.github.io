@@ -1,0 +1,44 @@
+@media screen and (max-width: 600px) {
+    .back-button-small {
+        display: inline-block;
+    }
+
+    .back-button {
+        display: none;
+    }
+
+    .project-icon {
+        position: relative;
+        top: -44px;
+        width: 110px !important;
+    }
+
+    .project-github-button {
+        height: 35px;
+        padding: 0.15em 1.3em;
+        font-size: 13px;
+    }
+
+    .back-button-image {
+        margin-right: 0px;
+        position: relative;
+        top: 2px;
+        left: -1px;
+    }
+
+    .project-title {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .side-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-height: 1000px) {
+    .side-menu {
+        top: 40%;
+    }
+}
