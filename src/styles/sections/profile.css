@@ -16,14 +16,15 @@
     position: relative;
     margin: auto;
 
-    /* width: 100vw; */
+    /* Extra horizontal room so translateX(-50%) from left:50% never clips */
+    width: 100%;
+    /* Height matches the tallest font size at this breakpoint */
     height: 96pt;
+    /* Let the blur spread outside the box instead of being hard-clipped */
+    overflow: visible;
     text-align: center;
-    /* top: 30%;
-    right: calc(7vh * 2 + 33%); */
     /* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
     filter: url(#threshold) blur(0.6px);
-
 }
 
 /* Your average text styling */
@@ -31,20 +32,34 @@
 #morph-text2 {
     color: var(--c-primary);
     position: absolute;
-    /* left: 50%; */
+    /* left:50% + translateX(-50%) = true horizontal center */
+    left: 50%;
     transform: translateX(-50%);
-    /* top: 30%; */
-    /* left: -5vw; */
-    /* width: 100%; */
+    white-space: nowrap;
     display: inline-block;
 
     font-family: 'PP Eiko';
     font-size: 96pt;
+    line-height: 1;
 
     text-align: center;
 
     -webkit-user-select: none;
     user-select: none;
+}
+
+/* Skip the expensive filter animation when the user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    #morph-container {
+        filter: none;
+    }
+    #morph-text1 {
+        display: none;
+    }
+    #morph-text2 {
+        opacity: 1 !important;
+        filter: none !important;
+    }
 }
 
 #morph-filters {
@@ -207,9 +222,13 @@
         display: flex;
     }
 
-    #text1,
-    #text2 {
+    #morph-text1,
+    #morph-text2 {
         font-size: 50pt;
+    }
+
+    #morph-container {
+        height: 50pt;
     }
 
     #profile {

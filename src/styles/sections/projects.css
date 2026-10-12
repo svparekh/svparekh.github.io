@@ -218,10 +218,14 @@
 }
 
 @media screen and (max-width: 940px) {
-    .project-card-slide {
+    .project-swiper .project-card-slide {
         justify-content: center;
         display: flex;
         margin-left: 0;
+    }
+
+    .project-swiper .project-card-container {
+        flex-shrink: 0;
     }
 }
 

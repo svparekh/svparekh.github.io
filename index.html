@@ -7,6 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setul Parekh</title>
 
+  <!-- Preconnect to Google Fonts to reduce DNS + TLS handshake time -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <script type="module">
     import 'swiper/swiper-bundle.css';
   </script>
@@ -96,7 +100,14 @@
     </div>
 
     <div class="mini-nav-menu-container">
-      <div class="mini-nav-menu-icon-container" onclick="toggleMenu()">
+      <div class="mini-nav-menu-icon-container"
+           onclick="toggleMenu()"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+           aria-controls="mini-nav-menu-items"
+           aria-label="Open navigation menu"
+           onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleMenu()}">
         <!-- <input type="checkbox" onclick="toggleMenu()"> -->
         <svg viewBox="0 0 32 32" class="mini-nav-menu-icon">
           <path class="mini-nav-menu-icon-line mini-nav-menu-icon-line-style1" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 
@@ -104,7 +115,7 @@
           <path class="mini-nav-menu-icon-line" d="M7 16 27 16"></path>
         </svg>
       </div>
-      <ul class="mini-nav-menu-items nav-menu-items">
+      <ul class="mini-nav-menu-items nav-menu-items" id="mini-nav-menu-items">
         <li><a href="#" onclick="toggleMenu()">Home</a></li>
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
         <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
@@ -117,20 +128,22 @@
   <!-- profile section -->
   <section id="profile">
     <!-- Decorations -->
-    <img src="./src/assets/svg_scribbles/squiggle.svg" class="svg-squiggle" alt="Squiggle"></img>
-    <img src="./src/assets/svg_scribbles/arrow.svg" class="svg-arrow" alt="Arrow to menu"></img>
-    <img src="./src/assets/svg_scribbles/scribble.svg" class="svg-scribble" alt="Scribble"></img>
+    <img src="./src/assets/svg_scribbles/squiggle.svg" class="svg-squiggle" alt="Squiggle" decoding="async"></img>
+    <img src="./src/assets/svg_scribbles/arrow.svg" class="svg-arrow" alt="Arrow to menu" decoding="async"></img>
+    <img src="./src/assets/svg_scribbles/scribble.svg" class="svg-scribble" alt="Scribble" decoding="async"></img>
 
     <!-- Socials -->
     <div id="socials-container">
-      <img src="./src/assets/linkedin_logo.png" alt="LinkedIn Profile link" class="icon"
+      <img src="./src/assets/linkedin_logo.png" alt="LinkedIn Profile link" class="icon" decoding="async"
         onclick="location.href='https://www.linkedin.com/in/setul-parekh/'">
-      <img src="./src/assets/github_logo.png" alt="GitHub Profile link" class="icon"
+      <img src="./src/assets/github_logo.png" alt="GitHub Profile link" class="icon" decoding="async"
         onclick="location.href='https://github.com/svparekh'">
     </div>
 
     <div class="section__pic-container">
-      <img src="./src/assets/headshot_circled.png" alt="Setul's Profile Photo" class="profile-pic animate-on-view">
+      <!-- fetchpriority=high: largest LCP element; decoding=async: off-main-thread decode -->
+      <img src="./src/assets/headshot_circled.png" alt="Setul's Profile Photo" class="profile-pic animate-on-view"
+           fetchpriority="high" decoding="async">
     </div>
 
     <div id="socials-container-below">
