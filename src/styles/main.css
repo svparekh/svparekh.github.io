@@ -101,7 +101,8 @@ footer p {
     display: inline-block;
 }
 
-.side-menu:hover .side-menu-popup {
+.side-menu:hover .side-menu-popup,
+.side-menu:focus-within .side-menu-popup {
     opacity: 1;
     visibility: visible;
     transform: translate(-50px, 0%);
@@ -143,25 +144,94 @@ footer p {
     flex-direction: column;
     transition: all 300ms ease-in-out;
     max-height: 50vh;
-    overflow-y: auto;
-    scrollbar-color: #6d6d6d var(--c-secondary);
 }
 
-.side-menu-popup a {
+.side-menu-popup a,
+.side-menu-launcher-submenu a,
+.side-menu-launcher-button {
     display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 7px 15px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
     text-decoration: none;
     text-align: left;
-    width: 100%;
     font-weight: 500;
     color: rgba(33, 28, 25, 0.6);
     letter-spacing: 1px;
+    transition: background-color 300ms ease 0s, color 300ms ease 0s;
 }
 
-.side-menu-popup a:hover {
+.side-menu-popup a:hover,
+.side-menu-popup a:focus-visible,
+.side-menu-launcher-submenu a:hover,
+.side-menu-launcher-submenu a:focus-visible,
+.side-menu-launcher-button:hover,
+.side-menu-launcher-button:focus-visible {
+    background-color: #00000015;
     color: rgba(33, 28, 25, 1);
+    text-decoration: none;
 }
 
-.side-menu-popup a div {
-    padding: 7px 15px;
-    border-radius: 7px;
+.side-menu-launcher {
+    position: relative;
+}
+
+.side-menu-launcher-button {
+    position: relative;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    padding-right: 30px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.side-menu-launcher-button::after {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    width: 6px;
+    height: 6px;
+    border-top: 1.5px solid currentColor;
+    border-right: 1.5px solid currentColor;
+    content: "";
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.side-menu-launcher-submenu {
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 0;
+    display: flex;
+    min-width: max-content;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--c-project-secondary);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(10px);
+    transition: all 300ms ease-in-out;
+}
+
+.side-menu-launcher-submenu::after {
+    position: absolute;
+    top: 0;
+    right: -12px;
+    bottom: 0;
+    width: 12px;
+    content: "";
+}
+
+.side-menu-launcher:hover .side-menu-launcher-submenu,
+.side-menu-launcher:focus-within .side-menu-launcher-submenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
 }

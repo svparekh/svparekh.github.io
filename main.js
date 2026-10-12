@@ -95,9 +95,15 @@ const timelineSections = [
         description: "Developed scalable solutions with Python, and expanded skills in Docker, Terraform, and OpenStack. Contributed to a dynamic team, driving innovation and business growth through cutting-edge technologies."
     }),
     new TimelineSection({
-        startDate: new Date(2024, 5), endDate: null,
+        startDate: new Date(2024, 7), endDate: new Date(2026, 3),
         color: '#2D95E5', tooltip: 'Progressive Insurance', icon: progIcon,
-        title: 'Apps Programmer Associate at Progressive Insurance',
+        title: 'Associate Software Developer at Progressive Insurance',
+        description: "Enhanced OpenShift cluster operations with Python scripting, driving automation and efficiency to elevate customer experience. Expanded skills in Docker, Kubernetes, and Terraform to optimize cloud-native infrastructure and deliver innovative solutions."
+    }),
+    new TimelineSection({
+        startDate: new Date(2026, 3), endDate: null,
+        color: '#2D95E5', tooltip: 'Progressive Insurance', icon: progIcon,
+        title: 'Software Developer at Progressive Insurance',
         description: "Enhanced OpenShift cluster operations with Python scripting, driving automation and efficiency to elevate customer experience. Expanded skills in Docker, Kubernetes, and Terraform to optimize cloud-native infrastructure and deliver innovative solutions."
     }),
 ];

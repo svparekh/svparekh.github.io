@@ -234,7 +234,8 @@ nav {
     max-height: 0;
     overflow: hidden;
     border-radius: 1rem;
-    transition: all 300ms ease 0s;
+    /* Only animate the properties that actually change: max-height and padding */
+    transition: max-height 300ms ease, padding 300ms ease;
     z-index: 999;
 }
 
@@ -243,18 +244,69 @@ nav {
     padding: 10px;
     text-align: center;
     font-size: 1.5rem;
-    /* text-decoration: none; */
-    transition: all 300ms ease 0s;
+    text-decoration: none;
+    transition: color 300ms ease;
+}
+
+.mini-nav-menu-items a:hover,
+.mini-nav-menu-items a:focus-visible {
+    text-decoration: none;
 }
 
 .mini-nav-menu-items li {
     list-style: none;
 }
 
+.mini-nav-menu-launcher-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px 34px;
+    border: 0;
+    background: transparent;
+    color: var(--c-primary);
+    font-family: inherit;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mini-nav-menu-launcher-button::after {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 7px;
+    height: 7px;
+    border-top: 1.5px solid currentColor;
+    border-right: 1.5px solid currentColor;
+    content: "";
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 300ms ease;
+}
+
+.mini-nav-menu-launcher-button.open::after {
+    transform: translateY(-50%) rotate(135deg);
+}
+
+.mini-nav-menu-launcher-submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms ease;
+}
+
+.mini-nav-menu-launcher-submenu.open {
+    max-height: 200px;
+}
+
+.mini-nav-menu-launcher-submenu a {
+    font-size: 1.25rem;
+}
+
 /* 'open' is a class added by js, when hamburger menu is open */
 .mini-nav-menu-items.open {
-    max-height: 300px;
+    max-height: min(80vh, 500px);
     padding: 1rem;
+    overflow-y: auto;
 }
 
 #footer-nav-menu {
